@@ -179,6 +179,15 @@
                 <version>9.5.1</version>
             </plugin>
 
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <configuration>
+                            <jmxPort>9002</jmxPort>
+                        </configuration>
+                    </plugin>
+
+
 
             <!-- JIB PLUGIN -->
             <plugin>
