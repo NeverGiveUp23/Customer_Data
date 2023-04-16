@@ -1,0 +1,37 @@
+HELP.md
+!backend/.mvn/wrapper/maven-wrapper.jar
+
+##Docker##
+docker-compose.yml
+Dockerrun.aws.json
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+backend/.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!backend/src/main/**/build/
+!backend/src/test/**/build/
+
+### VS Code ###
+backend/.vscode/
+
+# Project exclude paths
+/backend/target/
