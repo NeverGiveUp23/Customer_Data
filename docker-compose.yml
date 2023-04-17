@@ -1,0 +1,51 @@
+services:
+  db:
+    container_name: postgres
+    image: postgres:15.2
+    environment:
+      POSTGRES_USER: felix
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5332:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+
+
+
+#  felix-api:
+#    container_name: felix-api
+#    image: felixvjr23/felix-api
+#    environment:
+#      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/postgres?user=felix&password=password"
+#    ports:
+#      - "8088:8080"
+#    networks:
+#      - postgres
+#    depends_on:
+#      - db
+#         Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+
+  customer-api:
+    container_name: customer-api
+    image: felixvjr23/customer-api:latest
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/customer?user=felix&password=password"
+    ports:
+      - "8088:8080"
+    networks:
+      - postgres
+    depends_on:
+      - db
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
