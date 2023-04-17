@@ -68,7 +68,7 @@ public class CustomerJDBCDataAccessService implements CustomerDAO {
     public boolean existsPersonWithEmail(String email) {
         // SQL query to count customers with the given email
         var sql = """
-                SELECT count(id) FROM customer WHERE email = ?
+                SELECT count(id) FROM customer WHERE name = ?
                 """;
         // Execute the query with the email as a parameter
         Integer count = jdbcTemplate.queryForObject(sql, Integer.class, email);
