@@ -2,8 +2,7 @@ HELP.md
 !backend/.mvn/wrapper/maven-wrapper.jar
 
 ##Docker##
-docker-compose.yml
-Dockerrun.aws.json
+
 
 ### STS ###
 .apt_generated

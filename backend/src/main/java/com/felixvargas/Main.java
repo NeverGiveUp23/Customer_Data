@@ -23,6 +23,8 @@ public class Main {
 
 
 
+
+
     @Bean
     CommandLineRunner runner(CustomerRepository customerRepository) {
         return args -> {
