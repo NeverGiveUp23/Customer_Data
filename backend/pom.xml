@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.felixvargas</groupId>
-    <artifactId>felixvargas-api</artifactId>
+    <artifactId>customer-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-example</name>
     <description>Demo for spring boot</description>
@@ -185,7 +185,7 @@
                         </platforms>
                     </from>
                     <to>
-                        <image>docker.io/${docker.username}/felix-api:${project.version}</image>
+                        <image>docker.io/${docker.username}/customer-api:${project.version}</image>
                         <tags>
                             <tag>latest</tag>
                         </tags>
