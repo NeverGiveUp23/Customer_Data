@@ -20,7 +20,3 @@ spring:
   main:
     web-application-type: servlet
 
-
-management:
-  server:
-    port: 9002
