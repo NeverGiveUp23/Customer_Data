@@ -23,7 +23,7 @@ public abstract class AbstractTestContainers {
     // The container will be automatically started and stopped with the test
     @Container
     protected static final PostgreSQLContainer<?> postgreSQLContainer =
-            new PostgreSQLContainer<>("customer-api:latest")
+            new PostgreSQLContainer<>("customer-api:latest") // <- this is the name of the image
                     .withDatabaseName("felixvargas-dao-unit-test")
                     .withUsername("felix")
                     .withPassword("password");
