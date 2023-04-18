@@ -2,7 +2,7 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "felix-api",
+      "name": "customer-api",
       "image": "felix/customer-api:latest",
       "essential": true,
       "memory": 512,
