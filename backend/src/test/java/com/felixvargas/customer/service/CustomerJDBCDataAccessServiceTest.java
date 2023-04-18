@@ -35,7 +35,7 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestContainers {
         // then return the ID of the first customer that matches the filter
         return underJDBCTest.selectAllCustomer()
                 .stream()
-                .filter(c -> c.getEmail().equals(customer.getEmail()))
+                .filter(c -> c.getEmail().equals(customer.getEmail())) // filter by email
                 .map(Customer::getId)
                 .findFirst()
                 .orElseThrow();
