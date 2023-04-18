@@ -25,6 +25,7 @@ services:
 #      - postgres
 #    depends_on:
 #      - db
+
 #         Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
 
 

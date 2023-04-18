@@ -16,7 +16,7 @@ jobs:
         env:
           POSTGRES_USER: felix
           POSTGRES_PASSWORD: password
-          POSTGRES_DB: postgres
+          POSTGRES_DB: customer
         ports:
           - 5432:5432
         options: >-
