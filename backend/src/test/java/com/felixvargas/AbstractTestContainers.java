@@ -27,6 +27,8 @@ public abstract class AbstractTestContainers {
                     .withDatabaseName("felixvargas-dao-unit-test")
                     .withUsername("felix")
                     .withPassword("password");
+
+
     protected static final Faker Faker = new Faker();
 
     // Use the Flyway library to run database migrations before running the tests
