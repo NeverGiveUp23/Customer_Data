@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "customer-api",
-      "image": "felix/customer-api:latest",
+      "image": "felixvjr23/customer-api:latest",
       "essential": true,
       "memory": 512,
       "portMappings": [

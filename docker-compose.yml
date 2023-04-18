@@ -1,45 +1,30 @@
 services:
   db:
-    container_name: postgres
-    image: postgres:15.2
+    container_name: postgres # -> this is the name of the container
+    image: postgres:15.2 # -> this is the name of the image
     environment:
-      POSTGRES_USER: felix
-      POSTGRES_PASSWORD: password
-      PGDATA: /data/postgres
+      POSTGRES_USER: felix # -> this is the user of the database
+      POSTGRES_PASSWORD: password # -> this is the password of the database
+      PGDATA: /data/postgres # -> this is the path of the database
     volumes:
-      - postgres:/data/postgres
+      - postgres:/data/postgres # -> this is the path of the volume
     ports:
-      - "5332:5432"
+      - "5332:5432" # -> this is the port of the container
     networks:
-      - postgres
-    restart: unless-stopped
+      - postgres # -> this is the network of the container
+    restart: unless-stopped # -> this is the restart policy of the container
 
-#  felix-api:
-#    container_name: felix-api
-#    image: felixvjr23/felix-api
-#    environment:
-#      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/postgres?user=felix&password=password"
-#    ports:
-#      - "8088:8080"
-#    networks:
-#      - postgres
-#    depends_on:
-#      - db
-
-#         Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
-
-
-  customer-api:
-    container_name: customer-api
-    image: felixvjr23/customer-api:latest
-    environment:
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/customer?user=felix&password=password"
+  customer-api: # -> this is the name of the service
+    container_name: customer-api # -> this is the name of the container
+    image: felixvjr23/customer-api:latest # -> this is the name of the image
+    environment: # -> this is the environment variables
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/customer?user=felix&password=password" # -> this is the url of the database
     ports:
-      - "8088:8080"
+      - "8088:8080" # -> this is the port of the container
     networks:
-      - postgres
+      - postgres # -> this is the network of the container
     depends_on:
-      - db
+      - db # -> this is the dependency of the container
 
 networks:
   postgres:
