@@ -19,3 +19,8 @@ spring:
     show-sql: true
   main:
     web-application-type: servlet
+
+
+management:
+  server:
+    port: 9001
