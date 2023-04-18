@@ -2,7 +2,7 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "felix-api",
+      "name": "customer-api",
       "image": "felix/customer-api:latest",
       "essential": true,
       "memory": 512,
@@ -15,7 +15,7 @@
       "environment": [
         {
           "name": "SPRING_DATASOURCE_URL",
-          "value": "jdbc:postgresql://TODO:5432/postgres"
+          "value": "jdbc:postgresql://TODO:5432/customer"
         }
       ]
     }
