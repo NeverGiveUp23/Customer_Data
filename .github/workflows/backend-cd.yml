@@ -121,8 +121,7 @@ jobs:
         env:
           EB_ENVIRONMENT_NAME: ${{ secrets.EB_ENVIRONMENT_NAME }}
         run: >
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"Deployment completed successfully :success: :partykeanu: - http://'"${EB_ENVIRONMENT_NAME}".elasticbeanstalk.com/"}' ${{ secrets.SLACK_WEBHOOK_URL }}
-          
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Deployment completed successfully :success: :partykeanu: - http://http://customerapi-env-1.eba-ecz5qwkm.us-east-2.elasticbeanstalk.com/"}' ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Send Slack Message
         if: always()
