@@ -31,7 +31,7 @@ public class PingPongController {
             return counter;
         }
     }
-    record PingPong(String result, String result2) {}
+    record PingPong(String result, Integer result2) {}
 
 
     @GetMapping("/ping")
