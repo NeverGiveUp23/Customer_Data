@@ -2,7 +2,6 @@ package com.felixvargas;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.w3c.dom.css.Counter;
 
 @RestController
 public class PingPongController {
@@ -23,13 +22,14 @@ public class PingPongController {
         }
     }
 
-    public String counterDivideNumber(){
-        int counter = COUNTER / 2;
-
+    public int counterDivideNumber(){
+        Integer counter = COUNTER;
         if(COUNTER == 20){
-            COUNTER = counter;
+            return counter / 2;
         }
-        return "Counter is currently: %s".formatted(counter);
+        else{
+            return counter;
+        }
     }
     record PingPong(String result, String result2) {}
 
