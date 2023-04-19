@@ -54,7 +54,7 @@ jobs:
         run: | # -> this means that the next lines will be executed in the same shell
           echo "Dockerrun.aws.json before updating tag"
           cat Dockerrun.aws.json
-          sed -i -E 's_(felixvjr23/customer-api:)([^"]*)_\1'${{steps.build-number.outputs.BUILD_NUMBER}}'_' Dockerrun.aws.json 
+          sed -i -E 's_(felixvjr23/customer-api:)([^"]*)_\1'${{steps.build-number.outputs.BUILD_NUMBER}}'_' Dockerrun.aws.json
           echo "Dockerrun.aws.json after updating tag"
           cat Dockerrun.aws.json
 
