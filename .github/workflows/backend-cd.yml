@@ -68,7 +68,7 @@ jobs:
           version_label: ${{ steps.build-number.outputs.BUILD_NUMBER }} # -> this is the version label of the application
           version_description: ${{ github.SHA }} # -> this is the version description of the application
           region: ${{ secrets.EB_REGION }} # -> this is the region of the Elastic Beanstalk
-          deployment_package: backend/Dockerrun.aws.json # -> this is the path to the Dockerrun.aws.json file
+          deployment_package: Dockerrun.aws.json # -> this is the path to the Dockerrun.aws.json file
 
       - name: Commit Push Dockerrun.aws.json # -> this step will commit and push the Dockerrun.aws.json file
         run: |
