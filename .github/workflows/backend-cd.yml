@@ -70,10 +70,10 @@ jobs:
           region: ${{ secrets.EB_REGION }} # -> this is the region of the Elastic Beanstalk
           deployment_package: Dockerrun.aws.json # -> this is the path to the Dockerrun.aws.json file
 
-      - name: Commit Push Dockerrun.aws.json # -> this step will commit and push the Dockerrun.aws.json file
+      - name: Commit and push Dockerrun.aws.json
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "Update Dockerrun.aws.json docker image with new tag ${{ steps.build-number.outputs.BUILD_NUMBER }}"
-          git push
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git add ../Dockerrun.aws.json
+            git commit -m "Update Dockerrun.aws.json docker image with new tag ${{ steps.build-number.outputs.BUILD_NUMBER }}"
+            git push
