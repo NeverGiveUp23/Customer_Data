@@ -43,18 +43,18 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
 
-      - name: Set Build Number # -> this step will set the build number
+      - name: Set build number
         id: build-number
         run: echo "BUILD_NUMBER=$(date '+%d.%m.%Y.%H.%M.%S')" >> $GITHUB_OUTPUT
 
-      - name: Build Package Push with Maven # -> this step will build the package and push it to the docker hub
-        run: mvn -ntp -B verify -Ddocker.image.tag=${{steps.build-number.outputs.BUILD_NUMBER}} jib:build # -> -ntp means no transfer progress -> do not display transfer progress online -> -B means batch mode -> do not display progress bar
+      - name: Build Package Push with Maven
+        run: mvn -ntp -B verify -Ddocker.image.tag=${{steps.build-number.outputs.BUILD_NUMBER}} jib:build
 
       - name: Update Dockerrun.aws.json api image tag with new build number
         run: |
             echo "Dockerrun.aws.json before updating tag"
             cat ../Dockerrun.aws.json
-            sed -i -E 's_(amigoscode/amigoscode-api:)([^"]*)_\1'${{steps.build-number.outputs.BUILD_NUMBER}}'_' ../Dockerrun.aws.json
+            sed -i -E 's_(felixvjr23/customer-api:)([^"]*)_\1'${{steps.build-number.outputs.BUILD_NUMBER}}'_' ../Dockerrun.aws.json
             echo "Dockerrun.aws.json after updating tag"
             cat ../Dockerrun.aws.json
 
