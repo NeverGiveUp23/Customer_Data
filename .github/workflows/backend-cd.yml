@@ -50,13 +50,13 @@ jobs:
       - name: Build Package Push with Maven # -> this step will build the package and push it to the docker hub
         run: mvn -ntp -B verify -Ddocker.image.tag=${{steps.build-number.outputs.BUILD_NUMBER}} jib:build # -> -ntp means no transfer progress -> do not display transfer progress online -> -B means batch mode -> do not display progress bar
 
-      - name: Update Dockerrun.aws.json api image tag with new build number # -> this step will update the tag of the image in the Dockerrun.aws.json file
-        run: | # -> this means that the next lines will be executed in the same shell
-          echo "Dockerrun.aws.json before updating tag"
-          cat Dockerrun.aws.json
-          sed -i -E 's_(felixvjr23/customer-api:)([^"]*)_\1'${{steps.build-number.outputs.BUILD_NUMBER}}'_' Dockerrun.aws.json
-          echo "Dockerrun.aws.json after updating tag"
-          cat Dockerrun.aws.json
+      - name: Update Dockerrun.aws.json api image tag with new build number
+        run: |
+            echo "Dockerrun.aws.json before updating tag"
+            cat ../Dockerrun.aws.json
+            sed -i -E 's_(amigoscode/amigoscode-api:)([^"]*)_\1'${{steps.build-number.outputs.BUILD_NUMBER}}'_' ../Dockerrun.aws.json
+            echo "Dockerrun.aws.json after updating tag"
+            cat ../Dockerrun.aws.json
 
       - name: Deploy to Elastic Beanstalk # -> this step will deploy the application to the Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21 # -> this is the action that will deploy the application to the Elastic Beanstalk
