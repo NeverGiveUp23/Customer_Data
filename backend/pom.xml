@@ -16,6 +16,8 @@
     <properties>
         <java.version>17</java.version>
         <docker.username>felixvjr23</docker.username>
+        <docker.image.name>customer-api</docker.image.name>
+        <docker.image.tag/>
     </properties>
 
 
@@ -186,7 +188,7 @@
                         </platforms>
                     </from>
                     <to>
-                        <image>docker.io/${docker.username}/customer-api:${project.version}</image>
+                        <image>docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
                         <tags>
                             <tag>latest</tag>
                         </tags>

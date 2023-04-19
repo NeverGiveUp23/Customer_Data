@@ -1,0 +1,79 @@
+name: CD - Deploy Backend
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend/**' # -> this means that this workflow will be triggered only if there is a change in the backend folder
+
+jobs:
+  deploy:
+    runs-on: ubuntu:latest
+    services:
+      postgres:
+        image: postgres:15.2
+        env:
+          POSTGRES_USER: felix
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: customer # -> this is the name of the database
+        ports:
+          - 5332:5432
+        options: >-
+            --health-cmd pg_isready
+            --health-interval 10s
+            --health-timeout 5s
+            --health-retries 5
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+      - uses: actions/checkout@v3 # -> this step will checkout the code
+      - uses: actions/setup-java@v3 # -> this step will setup the java version
+        with:
+          distributions: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: Login to Docker Hub # -> this step will login to the docker hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+
+      - name: Set Build Number # -> this step will set the build number
+        id: build-number
+        run: echo "BUILD_NUMBER=$(date '+%d.%m.%Y.%H.%M.%S')" >> $GITHUB_OUTPUT
+
+      - name: Build Package Push with Maven # -> this step will build the package and push it to the docker hub
+        run: mvn -ntp -B verify -Ddocker.image.tag=${{steps.build-number.outputs.BUILD_NUMBER}} jib:build # -> -ntp means no transfer progress -> do not display transfer progress online -> -B means batch mode -> do not display progress bar
+
+      - name: Update Dockerrun.aws.json api image tag with new build number # -> this step will update the tag of the image in the Dockerrun.aws.json file
+        run: | # -> this means that the next lines will be executed in the same shell
+          echo "Dockerrun.aws.json before updating tag"
+          cat Dockerrun.aws.json
+          sed -i -E 's_(felixvjr23/customer-api:)([^"]*)_\1'${{steps.build-number.outputs.BUILD_NUMBER}}'_' Dockerrun.aws.json 
+          echo "Dockerrun.aws.json after updating tag"
+          cat Dockerrun.aws.json
+
+      - name: Deploy to Elastic Beanstalk # -> this step will deploy the application to the Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v21 # -> this is the action that will deploy the application to the Elastic Beanstalk
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }} # -> this is the access key of the IAM user
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # -> this is the secret key of the IAM user
+          application_name: ${{ secrets.EB_APPLICATION_NAME }} # -> this is the name of the application in the Elastic Beanstalk
+          environment_name: ${{ secrets.EB_ENVIRONMENT_NAME }} # -> this is the name of the environment in the Elastic Beanstalk
+          version_label: ${{ steps.build-number.outputs.BUILD_NUMBER }} # -> this is the version label of the application
+          version_description: ${{ github.SHA }} # -> this is the version description of the application
+          region: ${{ secrets.EB_REGION }} # -> this is the region of the Elastic Beanstalk
+          deployment_package: backend/Dockerrun.aws.json # -> this is the path to the Dockerrun.aws.json file
+
+      - name: Commit Push Dockerrun.aws.json # -> this step will commit and push the Dockerrun.aws.json file
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Update Dockerrun.aws.json docker image with new tag ${{ steps.build-number.outputs.BUILD_NUMBER }}"
+          git push
