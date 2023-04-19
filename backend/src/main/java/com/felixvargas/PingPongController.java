@@ -22,11 +22,20 @@ public class PingPongController {
             return message2;
         }
     }
-    record PingPong(String result) {}
+
+    public String counterDivideNumber(){
+        int counter = COUNTER / 2;
+
+        if(COUNTER == 20){
+            COUNTER = counter;
+        }
+        return "Counter is currently: %s".formatted(counter);
+    }
+    record PingPong(String result, String result2) {}
 
 
     @GetMapping("/ping")
     public PingPong getPingPong(){
-        return new PingPong(counterNumber());
+        return new PingPong(counterNumber(), counterDivideNumber());
     }
 }
