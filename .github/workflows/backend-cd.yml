@@ -58,17 +58,17 @@ jobs:
             echo "Dockerrun.aws.json after updating tag"
             cat ../Dockerrun.aws.json
 
-      - name: Deploy to Elastic Beanstalk # -> this step will deploy the application to the Elastic Beanstalk
-        uses: einaregilsson/beanstalk-deploy@v21 # -> this is the action that will deploy the application to the Elastic Beanstalk
+      - name: Deploy to Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v21
         with:
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }} # -> this is the access key of the IAM user
-          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # -> this is the secret key of the IAM user
-          application_name: ${{ secrets.EB_APPLICATION_NAME }} # -> this is the name of the application in the Elastic Beanstalk
-          environment_name: ${{ secrets.EB_ENVIRONMENT_NAME }} # -> this is the name of the environment in the Elastic Beanstalk
-          version_label: ${{ steps.build-number.outputs.BUILD_NUMBER }} # -> this is the version label of the application
-          version_description: ${{ github.SHA }} # -> this is the version description of the application
-          region: ${{ secrets.EB_REGION }} # -> this is the region of the Elastic Beanstalk
-          deployment_package: Dockerrun.aws.json # -> this is the path to the Dockerrun.aws.json file
+            aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            application_name: ${{ secrets.EB_APPLICATION_NAME }}
+            environment_name: ${{ secrets.EB_ENVIRONMENT_NAME }}
+            version_label: ${{ steps.build-number.outputs.BUILD_NUMBER }}
+            version_description: ${{ github.SHA }}
+            region: ${{ secrets.EB_REGION }}
+            deployment_package: Dockerrun.aws.json
 
       - name: Commit and push Dockerrun.aws.json
         run: |
