@@ -22,16 +22,16 @@ public class PingPongController {
         }
     }
 
-    public int counterDivideNumber(){
+    public String counterDivideNumber(){
         Integer counter = COUNTER;
         if(COUNTER == 20){
-            return counter / 2;
+            return counter.toString();
         }
         else{
-            return counter;
+            return "Counter is currently %s".formatted(counter / 2) ;
         }
     }
-    record PingPong(String result, Integer result2) {}
+    record PingPong(String result, String result2) {}
 
 
     @GetMapping("/ping")
