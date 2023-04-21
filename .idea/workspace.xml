@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="update docker compose with new image">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/client/src/components/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/backend-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/backend-cd.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/shared/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/shared/SideBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +61,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/client/src/components" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.Main">
     <configuration name="App.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend/client/src/App.jsx" working-dir="$PROJECT_DIR$/frontend/client/src">
       <method v="2" />
@@ -148,7 +148,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682048767940</updated>
-      <workItem from="1682048769206" duration="4948000" />
+      <workItem from="1682048769206" duration="7281000" />
     </task>
     <servers />
   </component>
