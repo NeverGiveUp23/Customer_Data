@@ -3,6 +3,7 @@ package com.felixvargas.customer.service;
 
 import com.felixvargas.customer.interfaces.CustomerDAO;
 import com.felixvargas.customer.model.Customer;
+import com.felixvargas.customer.model.Gender;
 import com.felixvargas.customer.repository.CustomerRepository;
 import org.springframework.stereotype.Repository;
 
@@ -21,16 +22,16 @@ public class CustomerListDataAccessService implements CustomerDAO {
                 1,
                 "Felix",
                 "Felix@gmail.com",
-                29
-        );
+                29,
+                Gender.MALE);
         customers.add(felix);
 
         Customer jane = new Customer(
                 2,
                 "Jane",
                 "Jane@gmail.com",
-                45
-        );
+                45,
+                Gender.MALE);
         customers.add(jane);
     }
 

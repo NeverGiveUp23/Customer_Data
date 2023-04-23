@@ -1,6 +1,7 @@
 package com.felixvargas.customer.service;
 
 import com.felixvargas.customer.model.Customer;
+import com.felixvargas.customer.model.Gender;
 import com.felixvargas.customer.repository.CustomerRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -65,8 +66,8 @@ class CustomerJPADataAccessServiceTest {
     void updateCustomer() {
         // Given
         Customer customer = new Customer(
-                "mike", "mike@aol.com", 77
-        );
+                "mike", "mike@aol.com", 77,
+                Gender.MALE);
         // When
 
         underTest.updateCustomer(customer);
@@ -91,8 +92,8 @@ class CustomerJPADataAccessServiceTest {
     void insertCustomer() {
         // Given
         Customer customer = new Customer(
-                "Felix", "felix@aol.com", 22
-        );
+                "Felix", "felix@aol.com", 22,
+                Gender.MALE);
         // When
         underTest.insertCustomer(customer);
 

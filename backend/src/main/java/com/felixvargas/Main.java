@@ -1,6 +1,7 @@
 package com.felixvargas;
 
 import com.felixvargas.customer.model.Customer;
+import com.felixvargas.customer.model.Gender;
 import com.felixvargas.customer.repository.CustomerRepository;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
@@ -38,8 +39,8 @@ public class Main {
             Customer customer = new Customer(
                     firstName + " " + lastName,
                     email,
-                    random.nextInt(16, 99)
-            );
+                    random.nextInt(16, 99),
+                    Gender.MALE);
             customerRepository.save(customer);
         };
     }

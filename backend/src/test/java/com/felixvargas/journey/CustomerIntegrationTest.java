@@ -1,6 +1,7 @@
 package com.felixvargas.journey;
 
 import com.felixvargas.customer.model.Customer;
+import com.felixvargas.customer.model.Gender;
 import com.felixvargas.customer.records.CustomerRegReq;
 import com.felixvargas.customer.records.CustomerUpdateRequest;
 import com.github.javafaker.Faker;
@@ -65,8 +66,8 @@ public class CustomerIntegrationTest {
                 .getResponseBody();
         // make sure that customer is present
         Customer expectedCustomer = new Customer(
-                name, email, age
-        );
+                name, email, age,
+                Gender.MALE);
         assertThat(getAllCustomer).usingRecursiveFieldByFieldElementComparatorIgnoringFields("id")
                 .contains(expectedCustomer);
 
@@ -227,8 +228,8 @@ public class CustomerIntegrationTest {
 
 
         Customer expectedCustomer = new Customer(
-                id, newName, email, age
-        );
+                id, newName, email, age,
+                Gender.MALE);
 
         assertThat(updatedCustomer).isEqualTo(expectedCustomer);
     }

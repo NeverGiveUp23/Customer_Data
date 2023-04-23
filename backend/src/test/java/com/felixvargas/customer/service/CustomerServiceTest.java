@@ -2,6 +2,7 @@ package com.felixvargas.customer.service;
 
 import com.felixvargas.customer.interfaces.CustomerDAO;
 import com.felixvargas.customer.model.Customer;
+import com.felixvargas.customer.model.Gender;
 import com.felixvargas.customer.records.CustomerRegReq;
 import com.felixvargas.customer.records.CustomerUpdateRequest;
 import com.felixvargas.exception.DuplicateResourceException;
@@ -51,8 +52,8 @@ class CustomerServiceTest {
         // Given
         int id = 100;
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22
-        );
+                "felix", "felix@aol.com", 22,
+                Gender.MALE);
 
         when(customerDAO.selectCustomerById(id)).thenReturn(Optional.of(customer));
         //WHEN
@@ -173,8 +174,8 @@ class CustomerServiceTest {
         int id = 10;
         // create a new customer
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22
-        );
+                "felix", "felix@aol.com", 22,
+                Gender.MALE);
         // use mockito to select the customer using the CustomerDAO instance
         // return optional object containing the customer object just created
         when(customerDAO.selectCustomerById(id)).thenReturn(Optional.of(customer));
@@ -212,8 +213,8 @@ class CustomerServiceTest {
         int id = 10;
         //create a new customer
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22
-        );
+                "felix", "felix@aol.com", 22,
+                Gender.MALE);
         // use mockito to select the customer using the CustomerDAO instance
         // return optional object containing the customer object just created
         when(customerDAO.selectCustomerById(id)).thenReturn(Optional.of(customer));
@@ -246,8 +247,8 @@ class CustomerServiceTest {
         int id = 10;
         //create a new customer
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22
-        );
+                "felix", "felix@aol.com", 22,
+                Gender.MALE);
         // use mockito to select the customer using the CustomerDAO instance
         // return optional object containing the customer object just created
         when(customerDAO.selectCustomerById(id)).thenReturn(Optional.of(customer));
@@ -280,8 +281,8 @@ class CustomerServiceTest {
         int id = 10;
         // create a new customer to update
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22
-        );
+                "felix", "felix@aol.com", 22,
+                Gender.MALE);
         // use mockito to select the customer using the CustomerDAO instance
         // return optional object containing the customer object just created
         when(customerDAO.selectCustomerById(id)).thenReturn(Optional.of(customer));
@@ -315,8 +316,8 @@ class CustomerServiceTest {
         int id = 10;
         // create a new customer
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22
-        );
+                "felix", "felix@aol.com", 22,
+                Gender.MALE);
         // Mockito grabbing the customer by id -> using Optional because it is of optional type
         when(customerDAO.selectCustomerById(id)).thenReturn(Optional.of(customer));
         // create the same email to be passed in to check if it exists
@@ -352,8 +353,8 @@ class CustomerServiceTest {
         int id = 10;
         // create a new customer
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22
-        );
+                "felix", "felix@aol.com", 22,
+                Gender.MALE);
         // Mockito grabbing the customer by id -> using Optional because it is of optional type
         when(customerDAO.selectCustomerById(id)).thenReturn(Optional.of(customer));
         // create a new updateCustomerRequest but pass in the customer pre-existing name, age, and email that we made

@@ -2,6 +2,7 @@ package com.felixvargas.customer.repository;
 
 import com.felixvargas.AbstractTestContainers;
 import com.felixvargas.customer.model.Customer;
+import com.felixvargas.customer.model.Gender;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +38,8 @@ class CustomerRepositoryTest extends AbstractTestContainers {
         Customer customer = new Customer(
                 name,
                 email,
-                20 // set the age to 20
-        );
+                20, // set the age to 20
+                Gender.MALE);
 
         // insert the new customer into the database
         underJPATest.save(customer);
@@ -70,8 +71,8 @@ class CustomerRepositoryTest extends AbstractTestContainers {
         Customer customer = new Customer(
                 name,
                 email,
-                20 // set the age to 20
-        );
+                20, // set the age to 20
+                Gender.MALE);
 
         // insert the new customer into the database
         underJPATest.save(customer);

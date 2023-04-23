@@ -2,6 +2,7 @@ package com.felixvargas.customer.service;
 
 import com.felixvargas.customer.interfaces.CustomerDAO;
 import com.felixvargas.customer.model.Customer;
+import com.felixvargas.customer.model.Gender;
 import com.felixvargas.customer.records.CustomerRegReq;
 import com.felixvargas.customer.records.CustomerUpdateRequest;
 import com.felixvargas.exception.DuplicateResourceException;
@@ -44,8 +45,8 @@ public class CustomerService {
         Customer newCustomer = new Customer(
                 customerRegReq.name(),
                 customerRegReq.email(),
-                customerRegReq.age()
-        );
+                customerRegReq.age(),
+                Gender.MALE);
         customerDAO.insertCustomer(newCustomer);
     }
 
