@@ -1,7 +1,7 @@
 package com.felixvargas.journey;
 
 import com.felixvargas.customer.model.Customer;
-import com.felixvargas.customer.model.Gender;
+import com.felixvargas.customer.enums.Gender;
 import com.felixvargas.customer.records.CustomerRegReq;
 import com.felixvargas.customer.records.CustomerUpdateRequest;
 import com.github.javafaker.Faker;

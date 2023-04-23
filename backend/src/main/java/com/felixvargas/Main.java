@@ -1,7 +1,7 @@
 package com.felixvargas;
 
 import com.felixvargas.customer.model.Customer;
-import com.felixvargas.customer.model.Gender;
+import com.felixvargas.customer.enums.Gender;
 import com.felixvargas.customer.repository.CustomerRepository;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;

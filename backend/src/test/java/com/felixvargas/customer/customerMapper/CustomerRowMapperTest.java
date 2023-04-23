@@ -1,7 +1,7 @@
 package com.felixvargas.customer.customerMapper;
 
 import com.felixvargas.customer.model.Customer;
-import com.felixvargas.customer.model.Gender;
+import com.felixvargas.customer.enums.Gender;
 import org.junit.jupiter.api.Test;
 
 import java.sql.ResultSet;

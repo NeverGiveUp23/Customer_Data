@@ -3,7 +3,7 @@ package com.felixvargas.customer.service;
 import com.felixvargas.AbstractTestContainers;
 import com.felixvargas.customer.customerMapper.CustomerRowMapper;
 import com.felixvargas.customer.model.Customer;
-import com.felixvargas.customer.model.Gender;
+import com.felixvargas.customer.enums.Gender;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

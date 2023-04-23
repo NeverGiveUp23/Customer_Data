@@ -1,5 +1,6 @@
 package com.felixvargas.customer.model;
 
+import com.felixvargas.customer.enums.Gender;
 import jakarta.persistence.*;
 
 import java.util.Objects;

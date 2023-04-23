@@ -3,7 +3,7 @@ package com.felixvargas.customer.service;
 
 import com.felixvargas.customer.interfaces.CustomerDAO;
 import com.felixvargas.customer.model.Customer;
-import com.felixvargas.customer.model.Gender;
+import com.felixvargas.customer.enums.Gender;
 import com.felixvargas.customer.repository.CustomerRepository;
 import org.springframework.stereotype.Repository;
 

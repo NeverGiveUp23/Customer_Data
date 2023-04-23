@@ -2,7 +2,7 @@ package com.felixvargas.customer.repository;
 
 import com.felixvargas.AbstractTestContainers;
 import com.felixvargas.customer.model.Customer;
-import com.felixvargas.customer.model.Gender;
+import com.felixvargas.customer.enums.Gender;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
