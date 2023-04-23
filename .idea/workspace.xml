@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES">
+    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="ADD GENDER FEATURE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/Card.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/frontend/client/src/App.jsx" root0="FORCE_HIGHLIGHTING" />
@@ -75,7 +74,7 @@
       <recent name="$PROJECT_DIR$/frontend/client/src/components" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.com.felixvargas.journey in customer-api">
+  <component name="RunManager" selected="Docker.docker-compose.yml.customer-api: Compose Deployment">
     <configuration name="CustomerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer-api" />
       <extension name="coverage">
@@ -105,20 +104,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.felixvargas.customer in customer-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="customer-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.felixvargas.customer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.felixvargas.customer" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="com.felixvargas.journey in customer-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer-api" />
       <extension name="coverage">
@@ -133,9 +118,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="App.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend/client/src/App.jsx" working-dir="$PROJECT_DIR$/frontend/client/src">
-      <method v="2" />
-    </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="customer-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.felixvargas.Main" />
@@ -149,13 +131,34 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.customer-api: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="customer-api" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml.customer-api: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="JUnit.com.felixvargas.journey in customer-api" />
         <item itemvalue="JUnit.com.felixvargas in customer-api" />
         <item itemvalue="JUnit.CustomerIntegrationTest" />
-        <item itemvalue="JUnit.com.felixvargas.customer in customer-api" />
-        <item itemvalue="Node.js.App.jsx" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682212475375</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ADD GENDER FEATURE">
+      <created>1682214319400</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682214319400</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +215,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES" />
+    <MESSAGE value="ADD GENDER FEATURE" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD GENDER FEATURE" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CustomerData$CustomerServiceTest.ic" NAME="CustomerServiceTest Coverage Results" MODIFIED="1682199101480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

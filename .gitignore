@@ -39,7 +39,7 @@ backend/.vscode/
 
 
 #JavaScript
-
+.env
 # Logs
 logs
 *.log
