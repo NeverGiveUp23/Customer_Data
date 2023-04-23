@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/enums/Gender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/customerMapper/CustomerRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/customerMapper/CustomerRowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/records/CustomerRegReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/records/CustomerRegReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerListDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerListDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/customerMapper/CustomerRowMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/customerMapper/CustomerRowMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/repository/CustomerRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/repository/CustomerRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerJDBCDataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerJDBCDataAccessServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerJPADataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerJPADataAccessServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/journey/CustomerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/journey/CustomerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/Card.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +75,7 @@
       <recent name="$PROJECT_DIR$/frontend/client/src/components" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.com.felixvargas in customer-api">
+  <component name="RunManager" selected="JUnit.com.felixvargas.journey in customer-api">
     <configuration name="CustomerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer-api" />
       <extension name="coverage">
@@ -130,6 +119,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.felixvargas.journey in customer-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.felixvargas.journey.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.felixvargas.journey" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="App.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend/client/src/App.jsx" working-dir="$PROJECT_DIR$/frontend/client/src">
       <method v="2" />
     </configuration>
@@ -146,21 +149,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.com.felixvargas.journey in customer-api" />
         <item itemvalue="JUnit.com.felixvargas in customer-api" />
         <item itemvalue="JUnit.CustomerIntegrationTest" />
         <item itemvalue="JUnit.com.felixvargas.customer in customer-api" />
         <item itemvalue="Node.js.App.jsx" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682211211450</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES">
+      <created>1682212475375</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682212475375</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
