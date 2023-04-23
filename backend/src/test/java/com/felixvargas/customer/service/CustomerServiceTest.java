@@ -87,7 +87,7 @@ class CustomerServiceTest {
         when(customerDAO.existsPersonWithEmail(email)).thenReturn(false);
 
         CustomerRegReq customerRegReq = new CustomerRegReq(
-                "felix", email, 22
+                "felix", email, 22, Gender.MALE
         );
         // When
 
@@ -112,7 +112,7 @@ class CustomerServiceTest {
         String email = "Felix@aol.com";
         // create a new customer with the registration request
         CustomerRegReq customerRegReq = new CustomerRegReq(
-                "felix", email, 22
+                "felix", email, 22, Gender.MALE
         );
         // now with Mockito checking if the customer with the given email exist -> return true
         // because in this test we want to throw the exception

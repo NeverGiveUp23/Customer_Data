@@ -1,5 +1,7 @@
 package com.felixvargas.customer.records;
 
-public record CustomerRegReq(String name, String email, Integer age) {
+import com.felixvargas.customer.model.Gender;
+
+public record CustomerRegReq(String name, String email, Integer age, Gender gender) {
 
 }

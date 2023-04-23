@@ -39,10 +39,11 @@ public class CustomerIntegrationTest {
         // name
         // for email
         int age = RANDOM.nextInt(1, 100); // <- random age
+        Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
 
         // create and new registration request customer
         CustomerRegReq request = new CustomerRegReq(
-                name, email, age
+                name, email, age, gender
         );
         // send a post request
         webTestClient.post()
@@ -67,7 +68,7 @@ public class CustomerIntegrationTest {
         // make sure that customer is present
         Customer expectedCustomer = new Customer(
                 name, email, age,
-                Gender.MALE);
+                gender);
         assertThat(getAllCustomer).usingRecursiveFieldByFieldElementComparatorIgnoringFields("id")
                 .contains(expectedCustomer);
 
@@ -101,9 +102,9 @@ public class CustomerIntegrationTest {
         String name = fakerName.fullName();
         String email = fakerName.lastName() + "-" + UUID.randomUUID() + "@animal123.com";
         int age = RANDOM.nextInt(1, 100);
-
+        Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
         CustomerRegReq request = new CustomerRegReq(
-                name, email, age
+                name, email, age, gender
         );
 
         // send a post request
@@ -163,9 +164,9 @@ public class CustomerIntegrationTest {
         String name = fakerName.fullName();
         String email = fakerName.lastName() + "-" + UUID.randomUUID() + "@animal123.com";
         int age = RANDOM.nextInt(1, 100);
-
+        Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
         CustomerRegReq request = new CustomerRegReq(
-                name, email, age
+                name, email, age, gender
         );
 
         // send a post request
@@ -229,7 +230,7 @@ public class CustomerIntegrationTest {
 
         Customer expectedCustomer = new Customer(
                 id, newName, email, age,
-                Gender.MALE);
+                gender);
 
         assertThat(updatedCustomer).isEqualTo(expectedCustomer);
     }

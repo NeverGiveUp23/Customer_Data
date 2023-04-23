@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="update docker compose with new image">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V3__Add_Gender_Enum_To_Customer.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/customerMapper/CustomerRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/customerMapper/CustomerRowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerJDBCDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerListDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerListDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/records/CustomerRegReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/records/CustomerRegReq.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/customerMapper/CustomerRowMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/customerMapper/CustomerRowMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/repository/CustomerRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/repository/CustomerRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerJDBCDataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerJDBCDataAccessServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerJPADataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerJPADataAccessServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/journey/CustomerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/journey/CustomerIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,6 +76,21 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.com.felixvargas in customer-api">
+    <configuration name="CustomerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.felixvargas.journey.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.felixvargas.journey" />
+      <option name="MAIN_CLASS_NAME" value="com.felixvargas.journey.CustomerIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="com.felixvargas in customer-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer-api" />
       <extension name="coverage">
@@ -143,26 +143,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="db" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.com.felixvargas in customer-api" />
+        <item itemvalue="JUnit.CustomerIntegrationTest" />
         <item itemvalue="JUnit.com.felixvargas.customer in customer-api" />
         <item itemvalue="Node.js.App.jsx" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -176,10 +163,22 @@
       <updated>1682048767940</updated>
       <workItem from="1682048769206" duration="7281000" />
     </task>
+    <task id="LOCAL-00001" summary="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES">
+      <created>1682210353010</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682210353010</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CustomerData$CustomerServiceTest.ic" NAME="CustomerServiceTest Coverage Results" MODIFIED="1682199101480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
