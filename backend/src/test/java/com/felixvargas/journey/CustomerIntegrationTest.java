@@ -41,6 +41,9 @@ public class CustomerIntegrationTest {
         int age = RANDOM.nextInt(1, 100); // <- random age
         Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
 
+
+
+
         // create and new registration request customer
         CustomerRegReq request = new CustomerRegReq(
                 name, email, age, gender

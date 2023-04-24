@@ -1,4 +1,4 @@
-import { Wrap, WrapItem, Spinner, Text } from '@chakra-ui/react';
+import { Wrap, WrapItem, Spinner, Text, Center } from '@chakra-ui/react';
 import SideBarWithHeader from './components/shared/SideBar.jsx';
 import {useEffect, useState} from 'react';
 import {getCustomers} from './services/client.js';
@@ -23,20 +23,30 @@ const App = ()  => {
 
         if(isLoading){
           return ( <SideBarWithHeader>
-                <Spinner />
+              <Center h={"500px"}>
+                  <Spinner
+                      size='xl'
+                      speed='0.65s'
+                      emptyColor='gray.200'
+                      color='blue.500'
+                  />
+              </Center>
+
             </SideBarWithHeader>)
         }
 
         if(customers.length <= 0){
             return (
                 <SideBarWithHeader>
-                    <Text>No Customers Found!</Text>
+                    <Center h={"500px"}>
+                        <Text fontSize={"4xl"}>No Customers Found!</Text>
+                    </Center>
                 </SideBarWithHeader>
             )
         }
 
     return (
-        <SideBarWithHeader>
+        <SideBarWithHeader justify={"center"} align={"center"}>
             <Wrap justify={"center"} spacing={"30px"}>
                 {customers.map((customer, index) => (
                     <WrapItem key={index}>

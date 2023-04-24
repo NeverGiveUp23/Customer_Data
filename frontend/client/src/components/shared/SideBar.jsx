@@ -90,8 +90,8 @@ const SidebarContent = ({onClose, ...rest}) => {
                 <Image
                     borderRadius='full'
                     boxSize='75px'
-                    src='https://user-images.githubusercontent.com/40702606/210880158-e7d698c2-b19a-4057-b415-09f48a746753.png'
-                    alt='Amigoscode'
+                    src='https://avatars.githubusercontent.com/u/109393467?s=400&u=614ee884c9fbb53fbbc02b775060131b868e2295&v=4'
+                    alt='Felix'
                 />
                 <CloseButton display={{base: 'flex', md: 'none'}} onClick={onClose}/>
             </Flex>

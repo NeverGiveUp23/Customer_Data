@@ -2,5 +2,14 @@ package com.felixvargas.customer.enums;
 
 public enum Gender {
     MALE,
-    FEMALE
+    FEMALE,
+    Male,
+    Female;
+
+
+    public static Gender fromString(String genderString) {
+        return Gender.valueOf(genderString.toUpperCase());
+    }
+
 }
+
