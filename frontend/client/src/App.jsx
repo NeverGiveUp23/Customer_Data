@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react';
 import {getCustomers} from './services/client.jsx';
 import CardWithImage from './components/Card';
 import DrawerForm from './components/DrawerForm.jsx';
-import { errorNotification} from "./services/notification.js";
+import { errorNotification} from "./services/Notification.js";
 
 const App = ()  => {
     const [ customers, setCustomers] = useState([]);

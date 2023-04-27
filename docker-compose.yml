@@ -25,6 +25,21 @@ services:
       - postgres # -> this is the network of the container
     depends_on:
       - db # -> this is the dependency of the container
+    restart: unless-stopped # -> this is the restart policy of the container
+
+  customer-react:
+    container_name: customer-react
+    image: felixvjr23/customer-react:latest
+    build:
+      context: frontend/client
+    ports:
+      - "3000:5173"
+    depends_on:
+      - customer-api
+    restart: unless-stopped
+
+
+
 
 networks:
   postgres:

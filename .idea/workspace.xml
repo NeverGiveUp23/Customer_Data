@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="ADD GENDER FEATURE">
-      <change afterPath="$PROJECT_DIR$/frontend/client/src/components/UpdateCustomer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/client/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/client/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/services/client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/services/client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/.env" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/CreateCustomerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/CreateCustomerForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/DeleteCustomer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/DeleteCustomer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/UpdateCustomer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/UpdateCustomer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/shared/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/shared/SideBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
