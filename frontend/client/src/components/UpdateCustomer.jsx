@@ -20,7 +20,7 @@ import * as Yup from 'yup';
 import {Form, Formik, useField} from 'formik';
 import CreateCustomerForm from "./CreateCustomerForm.jsx";
 import {updateCustomer} from "../services/client.jsx";
-import {successNotification, errorNotification} from "../services/notification.js";
+import {successNotification, errorNotification} from "../services/Notification.js";
 
 
 

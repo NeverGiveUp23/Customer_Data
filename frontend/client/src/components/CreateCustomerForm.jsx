@@ -2,7 +2,7 @@ import {Form, Formik, useField} from 'formik';
 import * as Yup from 'yup';
 import {Alert, AlertIcon, Box, Button, FormLabel, Input, Select, Stack} from "@chakra-ui/react";
 import {saveCustomer} from "../services/client.jsx";
-import {successNotification, errorNotification} from "../services/notification.js";
+import {successNotification, errorNotification} from "../services/Notification.js";
 
 const MyTextInput = ({label, ...props}) => {
     // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
@@ -63,7 +63,7 @@ const CreateCustomerForm = ({ fetchCustomers }) => {
                         .required(),
                     gender: Yup.string()
                         .oneOf(
-                            ['Male', 'Female'],
+                            ['MALE', 'FEMALE'],
                             'Invalid gender'
                         )
                         .required('Required'),
@@ -115,8 +115,8 @@ const CreateCustomerForm = ({ fetchCustomers }) => {
 
                             <MySelect label="Gender" name="gender">
                                 <option value="">Select gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
+                                <option value="MALE">Male</option>
+                                <option value="FEMALE">Female</option>
                             </MySelect>
 
                             <Button disabled={!isValid || isSubmitting} type="submit">Submit</Button>
