@@ -34,6 +34,9 @@ public class PingPongController {
     record PingPong(String result, String result2) {}
 
 
+
+
+
     @GetMapping("/ping")
     public PingPong getPingPong(){
         return new PingPong(counterNumber(), counterDivideNumber());
