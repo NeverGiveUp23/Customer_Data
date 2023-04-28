@@ -9,7 +9,7 @@ services:
     volumes:
       - postgres:/data/postgres # -> this is the path of the volume
     ports:
-      - "5332:5432" # -> this is the port of the container
+      - "5432:5432" # -> this is the port of the container
     networks:
       - postgres # -> this is the network of the container
     restart: unless-stopped # -> this is the restart policy of the container
