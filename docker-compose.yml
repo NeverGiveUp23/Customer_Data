@@ -35,7 +35,7 @@ services:
       args:
         api_base_url: http://localhost:8088
     ports:
-      - "80:5173"
+      - "3000:5173"
     depends_on:
       - customer-api
     restart: unless-stopped
