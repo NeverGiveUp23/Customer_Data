@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Adjusting spinner" />
+    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Adjusting spinner">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/Dockerfile" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,37 +78,7 @@
       <recent name="$PROJECT_DIR$/frontend/client/src/components" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration name="CustomerIntegrationTest.canRegisterACustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="customer-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.felixvargas.journey.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.felixvargas.journey" />
-      <option name="MAIN_CLASS_NAME" value="com.felixvargas.journey.CustomerIntegrationTest" />
-      <option name="METHOD_NAME" value="canRegisterACustomer" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.felixvargas in customer-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="customer-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.felixvargas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.felixvargas" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Docker.client/Dockerfile">
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="customer-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.felixvargas.Main" />
@@ -116,6 +89,18 @@
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <configuration name="client/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="frontend/client/Dockerfile" />
+        </settings>
       </deployment>
       <method v="2" />
     </configuration>
@@ -140,6 +125,16 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/frontend/client/package.json" />
       <command value="run" />
@@ -152,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.client/Dockerfile" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.customer-react: Compose Deployment" />
-        <item itemvalue="JUnit.com.felixvargas in customer-api" />
-        <item itemvalue="JUnit.CustomerIntegrationTest.canRegisterACustomer" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682703025845</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Adjusting spinner">
+      <created>1682704255344</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1682704255344</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
