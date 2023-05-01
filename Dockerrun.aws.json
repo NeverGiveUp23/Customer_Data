@@ -15,7 +15,7 @@
     },
     {
       "name": "customer-api",
-      "image": "felixvjr23/customer-api:01.05.2023.19.32.42",
+      "image": "felixvjr23/customer-api:01.05.2023.19.57.22",
       "essential": true,
       "memory": 512,
       "portMappings": [
