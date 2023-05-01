@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Adjusting spinner">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerrun.aws.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerrun.aws.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/.env" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +276,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682708575780</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Adjusting spinner">
+      <created>1682968564620</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682968564620</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Adjusting spinner">
+      <created>1682968622873</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1682968622873</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
