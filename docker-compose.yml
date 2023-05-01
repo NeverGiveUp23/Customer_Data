@@ -27,13 +27,13 @@ services:
       - db # -> this is the dependency of the container
     restart: unless-stopped # -> this is the restart policy of the container
 
-  customer-react:
-    container_name: customer-react
-    image: felixvjr23/customer-react:latest
+  customer-react-frontend:
+    container_name: customer-react-frontend
+    image: felixvjr23/customer-react-frontend:latest
     build:
       context: frontend/client
       args:
-        api_base_url: http://localhost:8088
+        api_base_url: http://localhost:8080
     ports:
       - "3000:5173"
     depends_on:
