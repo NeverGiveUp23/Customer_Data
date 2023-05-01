@@ -21,6 +21,9 @@ public class PingPongController {
             return message2;
         }
     }
+
+
+
     public String counterDivideNumber(){
         Integer counter = COUNTER;
         if(COUNTER == 20){
