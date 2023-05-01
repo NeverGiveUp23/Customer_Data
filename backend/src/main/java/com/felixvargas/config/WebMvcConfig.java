@@ -22,6 +22,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         CorsRegistration corsRegistration =  registry.addMapping("/api/**");
         allowedOrigins.forEach(corsRegistration::allowedOrigins);
         allowedMethods.forEach(corsRegistration::allowedMethods);
+        allowedMethods.forEach(corsRegistration::allowedHeaders);
     }
 
 }
