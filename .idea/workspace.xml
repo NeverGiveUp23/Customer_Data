@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Adjusting spinner">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/fontend-react-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/fontend-react-cd.yml" afterDir="false" />
-    </list>
+    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Adjusting spinner" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -416,7 +414,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683049876133</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Adjusting spinner">
+      <created>1683050322276</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1683050322277</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Adjusting spinner">
+      <created>1683050496198</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1683050496198</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Adjusting spinner">
+      <created>1683050734645</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1683050734645</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
