@@ -118,6 +118,7 @@ const NavItem = ({icon, children, ...rest}) => {
                     bg: 'blue.400',
                     color: 'white',
                 }}
+
                 {...rest}>
                 {icon && (
                     <Icon
