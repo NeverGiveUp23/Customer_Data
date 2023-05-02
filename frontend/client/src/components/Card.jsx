@@ -17,7 +17,6 @@ export default function CardWithImage({id, name, email, age, gender, imageNumber
     const randomUserGender = gender  === "MALE" ? "men" : "women";
 
     console.log('gender:', gender);
-    console.log('image:', gender === 'MALE' ? maleImages[imageNumber] : femaleImages[imageNumber]);
 
     return (
         <Center py={6}>
