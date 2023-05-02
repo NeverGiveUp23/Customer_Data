@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "customer-react-frontend",
-      "image": "felixvjr23/customer-react-frontend:02.05.2023.18.10.50",
+      "image": "felixvjr23/customer-react-frontend:02.05.2023.18.21.27",
       "essential": true,
       "memory": 256,
       "portMappings": [
