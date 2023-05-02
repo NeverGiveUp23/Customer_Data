@@ -46,11 +46,11 @@ jobs:
 
       - name: Build and Publish
         run: |
-          chmod +x ../../ci/build-publish.sh
+          chmod +x ../ci/build-publish.sh
           USERNAME=felixvjr23 \
           REPO=customer-react-frontend \
           TAG=${{ steps.build-number.outputs.BUILD_NUMBER }} \
-            ../../ci/build-publish.sh . \
+            ../ci/build-publish.sh . \
             --build-arg api_base_url=http://customerapi-env-1.eba-ecz5qwkm.us-east-2.elasticbeanstalk.com:8080
 
       - name: Send Slack Message
@@ -62,10 +62,10 @@ jobs:
       - name: Update Dockerrun.aws.json api image tag with new build number
         run: |
           echo "Dockerrun.aws.json before updating tag"
-          cat ../../Dockerrun.aws.json
-          sed -i -E 's_(felixvjr23/customer-react-frontend:)([^"]*)_\1'${{steps.build-number.outputs.BUILD_NUMBER}}'_' ../../Dockerrun.aws.json
+          cat ../Dockerrun.aws.json
+          sed -i -E 's_(felixvjr23/customer-react-frontend:)([^"]*)_\1'${{steps.build-number.outputs.BUILD_NUMBER}}'_' ../Dockerrun.aws.json
           echo "Dockerrun.aws.json after updating tag"
-          cat ../../Dockerrun.aws.json
+          cat ../Dockerrun.aws.json
 
       - name: Send Slack Build Successful Notification
         run: >
@@ -93,7 +93,7 @@ jobs:
         run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
-            git add ../../Dockerrun.aws.json
+            git add ../Dockerrun.aws.json
             git commit -m "Update Dockerrun.aws.json docker image with new tag ${{ steps.build-number.outputs.BUILD_NUMBER }}"
             git push
           
