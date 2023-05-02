@@ -67,11 +67,9 @@ jobs:
           echo "Dockerrun.aws.json after updating tag"
           cat ../../Dockerrun.aws.json
 
-      - name: Deploy to AWS Elastic Beanstalk
+      - name: Send Slack Build Successful Notification
         run: >
-          curl -X POST -H 'Content-type: application/json' 
-                    --data '{"text":":aws: :alert: Deploying to AWS Elastic Beanstalk :progress_bar: :good-luck:"}' 
-                    ${{ secrets.SLACK_WEBHOOK_URL }}
+          curl -X POST -H 'Content-type: application/json' --data '{"text":":aws: Starting AWS Deployment"}' ${{secrets.SLACK_WEBHOOK_URL}}
 
       - name: Deploy to AWS Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v15
