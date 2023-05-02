@@ -4,9 +4,9 @@ name: CD - Deploy React Frontend
 on:
   workflow_dispatch:
     push:
-        branches:
+      branches:
         - main
-        paths:
+      paths:
         - 'frontend/**'
 
 jobs:
