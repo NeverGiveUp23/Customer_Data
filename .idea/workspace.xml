@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Adjusting spinner">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/.env" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +79,7 @@
       <recent name="$PROJECT_DIR$/frontend/client/src/components" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.customer-react-frontend: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.Main">
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="customer-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.felixvargas.Main" />
@@ -325,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682971159476</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Adjusting spinner">
+      <created>1682975177579</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1682975177579</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
