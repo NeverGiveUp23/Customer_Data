@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Adjusting spinner">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/fontend-react-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/fontend-react-cd.yml" afterDir="false" />
-    </list>
+    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="CHANGING SIDEBAR COLOR" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -447,7 +445,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683050995795</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Adjusting spinner">
+      <created>1683051342081</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1683051342081</updated>
+    </task>
+    <task id="LOCAL-00042" summary="CHANGING SIDEBAR COLOR">
+      <created>1683051401110</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1683051401110</updated>
+    </task>
+    <task id="LOCAL-00043" summary="CHANGING SIDEBAR COLOR">
+      <created>1683051508987</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1683051508987</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +476,8 @@
     <MESSAGE value="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES" />
     <MESSAGE value="ADD GENDER FEATURE" />
     <MESSAGE value="Adjusting spinner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusting spinner" />
+    <MESSAGE value="CHANGING SIDEBAR COLOR" />
+    <option name="LAST_COMMIT_MESSAGE" value="CHANGING SIDEBAR COLOR" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CustomerData$CustomerServiceTest.ic" NAME="CustomerServiceTest Coverage Results" MODIFIED="1682199101480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
