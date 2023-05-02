@@ -14,7 +14,7 @@ import {
 import DeleteCustomer from "./DeleteCustomer.jsx";
 import UpdateCustomer from "./UpdateCustomer.jsx";
 export default function CardWithImage({id, name, email, age, gender, imageNumber, fetchCustomers}) {
-    const randomUserGender = gender  === "MALE" ? "men" : "women";
+    const randomUserGender = gender  === "Male" ? "men" : "women";
     return (
         <Center py={6}>
             <Box
