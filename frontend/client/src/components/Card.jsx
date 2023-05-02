@@ -16,7 +16,6 @@ import UpdateCustomer from "./UpdateCustomer.jsx";
 export default function CardWithImage({id, name, email, age, gender, imageNumber, fetchCustomers}) {
     const randomUserGender = gender  === "MALE" ? "men" : "women";
 
-    console.log('gender:', gender);
 
     return (
         <Center py={6}>
