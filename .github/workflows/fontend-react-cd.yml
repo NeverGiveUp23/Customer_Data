@@ -7,14 +7,14 @@ on:
         branches:
         - main
         paths:
-        - 'frontend/client/**'
+        - 'frontend/**'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: frontend/client
+        working-directory: ./frontend
 
     steps:
       - uses: actions/checkout@v3
