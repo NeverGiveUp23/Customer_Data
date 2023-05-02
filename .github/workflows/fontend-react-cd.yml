@@ -40,11 +40,11 @@ jobs:
 
       - name: Build and Publish
         run: |
-          chmod +x ../ci/build-publish.sh
+          chmod +x ../../ci/build-publish.sh
           USERNAME=felixvjr23 \
           REPO=customer-react-frontend \
           TAG=${{ steps.build-number.outputs.BUILD_NUMBER }} \
-            ../ci/build-publish.sh . \
+            ../../ci/build-publish.sh . \
             --build-arg api_base_url=http://customerapi-env-1.eba-ecz5qwkm.us-east-2.elasticbeanstalk.com:8080
 
       - name: Send Slack Message
