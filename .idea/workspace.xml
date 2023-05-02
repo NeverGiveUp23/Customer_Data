@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="CHANGING SIDEBAR COLOR" />
+    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="CHANGING SIDEBAR COLOR">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,20 +166,6 @@
       <option name="presentableId" value="Default" />
       <updated>1682048767940</updated>
       <workItem from="1682048769206" duration="7281000" />
-    </task>
-    <task id="LOCAL-00001" summary="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES">
-      <created>1682210353010</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1682210353010</updated>
-    </task>
-    <task id="LOCAL-00002" summary="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES">
-      <created>1682211046313</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1682211046313</updated>
     </task>
     <task id="LOCAL-00003" summary="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES">
       <created>1682211211450</created>
@@ -494,7 +482,35 @@
       <option name="project" value="LOCAL" />
       <updated>1683052218401</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="CHANGING SIDEBAR COLOR">
+      <created>1683052269101</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1683052269101</updated>
+    </task>
+    <task id="LOCAL-00049" summary="CHANGING SIDEBAR COLOR">
+      <created>1683052337568</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1683052337568</updated>
+    </task>
+    <task id="LOCAL-00050" summary="CHANGING SIDEBAR COLOR">
+      <created>1683052361615</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1683052361617</updated>
+    </task>
+    <task id="LOCAL-00051" summary="CHANGING SIDEBAR COLOR">
+      <created>1683052378379</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1683052378379</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
