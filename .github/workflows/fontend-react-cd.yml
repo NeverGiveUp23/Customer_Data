@@ -26,9 +26,7 @@ jobs:
 
       - name: Send Slack Message
         run: >
-          curl -X POST -H 'Content-type: application/json'
-                      --data '{"text":":github: :alert: Starting deployment of frontend :progress_bar: :good-luck:"}' 
-                      ${{ secrets.SLACK_WEBHOOK_URL }}
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Starting deployment of frontend :progress_bar: :good-luck:"}' ${{secrets.SLACK_WEBHOOK_URL}}
 
       - name: Set build number
         id: build-number
