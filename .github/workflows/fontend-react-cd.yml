@@ -38,6 +38,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
 
+      - name: Send Slack Login Successful Login Notification
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        run: >
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"'"${DOCKERHUB_USERNAME}"' :docker: successfully logged in to Docker Hub"}' ${{secrets.SLACK_WEBHOOK_URL}}
+
       - name: Build and Publish
         run: |
           chmod +x ../../ci/build-publish.sh
@@ -50,8 +56,8 @@ jobs:
       - name: Send Slack Message
         run: >
           curl -X POST -H 'Content-type: application/json' 
-                    --data '{"text":":docker: Image tag:${{steps.build-number.outputs.BUILD_NUMBER}} pushed to https://hub.docker.com/repository/docker/felixvjr23/customer-react-frontend"}' 
-                    ${{ secrets.SLACK_WEBHOOK_URL }}
+          --data '{"text":":partydocker: Image tag:${{steps.build-number.outputs.BUILD_NUMBER}} pushed to https://hub.docker.com/repository/docker/felixvjr23/customer-react-frontend"}' 
+          ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Update Dockerrun.aws.json api image tag with new build number
         run: |
@@ -81,11 +87,9 @@ jobs:
           wait_for_environment_recovery: 60
 
 
-      - name: Send Slack Message
+      - name: Send Slack Build Successful Notification
         run: >
-          curl -X POST -H 'Content-type: application/json' 
-                    --data '{"text":":aws: :alert: Deployment to AWS Elastic Beanstalk completed :good-luck:"}' 
-                    ${{ secrets.SLACK_WEBHOOK_URL }}
+          curl -X POST -H 'Content-type: application/json' --data '{"text":":aws: Starting AWS Deployment"}' ${{secrets.SLACK_WEBHOOK_URL}}
 
       - name: Commit and Push new Dockerrun.aws.json
         run: |
@@ -96,11 +100,11 @@ jobs:
             git push
           
 
-      - name: Send Slack Message
+      - name: Send Slack Commit Successful Notification
+        env:
+          EB_ENVIRONMENT_NAME: ${{ secrets.EB_ENVIRONMENT_NAME }}
         run: >
-            curl -X POST -H 'Content-type: application/json' 
-                      --data '{"text":":github: :alert: Pushed new Dockerrun.aws.json to github"}' 
-                      ${{ secrets.SLACK_WEBHOOK_URL }}
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Deployment completed successfully :success: :partykeanu: - http://customerapi-env-1.eba-ecz5qwkm.us-east-2.elasticbeanstalk.com/"}' ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Send Slack Message
         if: always()
