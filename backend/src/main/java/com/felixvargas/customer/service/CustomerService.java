@@ -1,5 +1,7 @@
 package com.felixvargas.customer.service;
 
+import com.felixvargas.customer.DTO.CustomerDTO;
+import com.felixvargas.customer.DTO.CustomerDTOMapper;
 import com.felixvargas.customer.interfaces.CustomerDAO;
 import com.felixvargas.customer.model.Customer;
 import com.felixvargas.customer.records.CustomerRegReq;
@@ -8,28 +10,38 @@ import com.felixvargas.exception.DuplicateResourceException;
 import com.felixvargas.exception.RequestValidationException;
 import com.felixvargas.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service  // Spring annotation indicating that this class is a service
 public class CustomerService {
 
     private final CustomerDAO customerDAO;  // field to hold a CustomerDAO object
-
+    private final PasswordEncoder passwordEncoder;  // field to hold a PasswordEncoder object
     // Constructor that injects a CustomerDAO object using the @Qualifier annotation
-    public CustomerService(@Qualifier("jpa") CustomerDAO customerDAO) {
+
+    private final CustomerDTOMapper customerDTOMapper;
+    public CustomerService(@Qualifier("jpa") CustomerDAO customerDAO, PasswordEncoder passwordEncoder, CustomerDTOMapper customerDTOMapper) {
         this.customerDAO = customerDAO;
+        this.passwordEncoder = passwordEncoder;
+        this.customerDTOMapper = customerDTOMapper;
     }
 
-    public List<Customer> selectAllCustomers() {
-        return customerDAO.selectAllCustomer();
+    public List<CustomerDTO> selectAllCustomers() {
+        return customerDAO.selectAllCustomer()
+                .stream()
+                .map(customerDTOMapper)
+                .collect(Collectors.toList());
     }
 
-    public Optional<Customer> selectCustomerById(Integer customerId) {
-        return customerDAO.selectCustomerById(customerId);
+    public Optional<CustomerDTO> selectCustomerById(Integer customerId) {
+        return customerDAO.selectCustomerById(customerId)
+                .map(customerDTOMapper);
     }
 
 
@@ -44,6 +56,7 @@ public class CustomerService {
         Customer newCustomer = new Customer(
                 customerRegReq.name(),
                 customerRegReq.email(),
+                passwordEncoder.encode(customerRegReq.password()),
                 customerRegReq.age(),
                 customerRegReq.gender());
         customerDAO.insertCustomer(newCustomer);
@@ -60,15 +73,20 @@ public class CustomerService {
     }
 
     // Private method to retrieve a customer by ID from the database (used internally by updateCustomer method)
-    public Customer getCustomer(Integer customerId) {
-        return customerDAO.selectCustomerById(customerId).orElseThrow(() -> new ResourceNotFoundException(
+    public CustomerDTO getCustomer(Integer customerId) {
+        return customerDAO.selectCustomerById(customerId)
+                .map(customerDTOMapper)
+                .orElseThrow(() -> new ResourceNotFoundException(
                 "Customer with id %s not found".formatted(customerId)
         ));  // Throws exception if customer with the specified ID does not exist
     }
 
     // Method to update a customer in the database
     public void updateCustomer(Integer customerId, CustomerUpdateRequest customerUpdateRequest) {
-        Customer customer = getCustomer(customerId);  // Retrieve the customer to be updated
+        Customer customer =  customerDAO.selectCustomerById(customerId)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Customer with id %s not found".formatted(customerId)
+                ));    // Retrieve the customer to be updated
 
         boolean changes = false;  // Flag to track if any changes were made
 

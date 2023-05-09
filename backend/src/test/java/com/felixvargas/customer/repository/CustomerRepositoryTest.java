@@ -1,6 +1,7 @@
 package com.felixvargas.customer.repository;
 
 import com.felixvargas.AbstractTestContainers;
+import com.felixvargas.TestConfig;
 import com.felixvargas.customer.model.Customer;
 import com.felixvargas.customer.enums.Gender;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Import;
 
 import java.util.UUID;
 
@@ -17,6 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest // <- only loads what the JPA Component needs to run, brings in the essentials only
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // <- connects to our test containers
+@Import({TestConfig.class})
 class CustomerRepositoryTest extends AbstractTestContainers {
 
     @Autowired
@@ -38,7 +41,7 @@ class CustomerRepositoryTest extends AbstractTestContainers {
         Customer customer = new Customer(
                 name,
                 email,
-                20, // set the age to 20
+                "password", 20, // set the age to 20
                 Gender.MALE);
 
         // insert the new customer into the database
@@ -71,6 +74,7 @@ class CustomerRepositoryTest extends AbstractTestContainers {
         Customer customer = new Customer(
                 name,
                 email,
+                "password",
                 20, // set the age to 20
                 Gender.MALE);
 

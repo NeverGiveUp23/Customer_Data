@@ -3,5 +3,9 @@ CREATE TABLE customer
     id    BIGSERIAL PRIMARY KEY,
     name  TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    gender TEXT NOT NULL ,
     age   INT  NOT NULL
 );
+
+CREATE SEQUENCE IF NOT EXISTS customer_id_seq START WITH 1 INCREMENT BY 1;

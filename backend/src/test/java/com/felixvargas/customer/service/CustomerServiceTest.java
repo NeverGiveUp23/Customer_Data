@@ -1,5 +1,7 @@
 package com.felixvargas.customer.service;
 
+import com.felixvargas.customer.DTO.CustomerDTO;
+import com.felixvargas.customer.DTO.CustomerDTOMapper;
 import com.felixvargas.customer.interfaces.CustomerDAO;
 import com.felixvargas.customer.model.Customer;
 import com.felixvargas.customer.enums.Gender;
@@ -14,6 +16,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
 
@@ -27,15 +30,22 @@ class CustomerServiceTest {
 
     private CustomerService customerServiceTest;
     // The object being tested
+
+    private final CustomerDTOMapper customerDTOMapper = new CustomerDTOMapper();
     @Mock
     // Annotation that creates a mock object to use in place of the actual object
     private CustomerDAO customerDAO;
     // Mocked object that the CustomerService object depends on
+    @Mock
+    private PasswordEncoder passwordEncoder;
+
+
+
 
     @BeforeEach
         // Annotation that indicates a method to be run before each test method
     void setUp() {
-        customerServiceTest = new CustomerService(customerDAO);
+        customerServiceTest = new CustomerService(customerDAO, passwordEncoder, customerDTOMapper);
         // Create a new instance of CustomerService with the mocked CustomerDAO object injected
     }
 
@@ -52,15 +62,17 @@ class CustomerServiceTest {
         // Given
         int id = 100;
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22,
+                "felix", "felix@aol.com", "password", 22,
                 Gender.MALE);
 
         when(customerDAO.selectCustomerById(id)).thenReturn(Optional.of(customer));
+
+        CustomerDTO expected = customerDTOMapper.apply(customer);
         //WHEN
-        Customer actual = customerServiceTest.getCustomer(id);
+        CustomerDTO actual = customerServiceTest.getCustomer(id);
         // Then
 
-        assertThat(actual).isEqualTo(customer);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Test
@@ -87,10 +99,14 @@ class CustomerServiceTest {
         when(customerDAO.existsPersonWithEmail(email)).thenReturn(false);
 
         CustomerRegReq customerRegReq = new CustomerRegReq(
-                "felix", email, 22, Gender.MALE
+                "felix", email, "password", 22, Gender.MALE
         );
-        // When
 
+
+        when(passwordEncoder.encode(customerRegReq.password())).thenReturn("");
+        // When
+        String passwordHash = "kcndkfnd78";
+        when(passwordEncoder.encode(customerRegReq.password())).thenReturn(passwordHash);
         customerServiceTest.addCustomer(customerRegReq);
 
         // Then
@@ -102,6 +118,7 @@ class CustomerServiceTest {
         assertThat(capturedCustomer.getId()).isNull();
         assertThat(capturedCustomer.getName()).isEqualTo(customerRegReq.name());
         assertThat(capturedCustomer.getEmail()).isEqualTo(customerRegReq.email());
+        assertThat(capturedCustomer.getPassword()).isEqualTo(passwordHash);
         assertThat(capturedCustomer.getAge()).isEqualTo(customerRegReq.age());
     }
 
@@ -112,7 +129,7 @@ class CustomerServiceTest {
         String email = "Felix@aol.com";
         // create a new customer with the registration request
         CustomerRegReq customerRegReq = new CustomerRegReq(
-                "felix", email, 22, Gender.MALE
+                "felix", email, "password", 22, Gender.MALE
         );
         // now with Mockito checking if the customer with the given email exist -> return true
         // because in this test we want to throw the exception
@@ -174,7 +191,7 @@ class CustomerServiceTest {
         int id = 10;
         // create a new customer
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22,
+                "felix", "felix@aol.com", "password", 22,
                 Gender.MALE);
         // use mockito to select the customer using the CustomerDAO instance
         // return optional object containing the customer object just created
@@ -213,7 +230,7 @@ class CustomerServiceTest {
         int id = 10;
         //create a new customer
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22,
+                "felix", "felix@aol.com", "password", 22,
                 Gender.MALE);
         // use mockito to select the customer using the CustomerDAO instance
         // return optional object containing the customer object just created
@@ -247,7 +264,7 @@ class CustomerServiceTest {
         int id = 10;
         //create a new customer
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22,
+                "felix", "felix@aol.com", "password", 22,
                 Gender.MALE);
         // use mockito to select the customer using the CustomerDAO instance
         // return optional object containing the customer object just created
@@ -281,7 +298,7 @@ class CustomerServiceTest {
         int id = 10;
         // create a new customer to update
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22,
+                "felix", "felix@aol.com", "password", 22,
                 Gender.MALE);
         // use mockito to select the customer using the CustomerDAO instance
         // return optional object containing the customer object just created
@@ -316,7 +333,7 @@ class CustomerServiceTest {
         int id = 10;
         // create a new customer
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22,
+                "felix", "felix@aol.com", "password", 22,
                 Gender.MALE);
         // Mockito grabbing the customer by id -> using Optional because it is of optional type
         when(customerDAO.selectCustomerById(id)).thenReturn(Optional.of(customer));
@@ -353,7 +370,7 @@ class CustomerServiceTest {
         int id = 10;
         // create a new customer
         Customer customer = new Customer(
-                "felix", "felix@aol.com", 22,
+                "felix", "felix@aol.com", "password", 22,
                 Gender.MALE);
         // Mockito grabbing the customer by id -> using Optional because it is of optional type
         when(customerDAO.selectCustomerById(id)).thenReturn(Optional.of(customer));

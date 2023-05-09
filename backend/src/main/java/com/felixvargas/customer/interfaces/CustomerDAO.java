@@ -2,6 +2,7 @@ package com.felixvargas.customer.interfaces;
 
 import com.felixvargas.customer.model.Customer;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,4 +21,6 @@ public interface CustomerDAO {
     boolean existsPersonWithId(Integer Id);
 
     void updateCustomer(Customer update);
+
+    Optional<Customer> selectCustomerByEmail(String email);
 }

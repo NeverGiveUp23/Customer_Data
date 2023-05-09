@@ -1,9 +1,12 @@
 package com.felixvargas.customer.controller;
 
+import com.felixvargas.customer.DTO.CustomerDTO;
 import com.felixvargas.customer.model.Customer;
 import com.felixvargas.customer.records.CustomerRegReq;
 import com.felixvargas.customer.records.CustomerUpdateRequest;
 import com.felixvargas.customer.service.CustomerService;
+import com.felixvargas.jwt.JWTUtil;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,32 +19,39 @@ public class CustomerController {
 
     private final CustomerService customerService;  // Field to hold a CustomerService object
 
+    private final JWTUtil jwtUtil;
+
     // Constructor that injects a CustomerJPADataAccessService and CustomerService object
-    public CustomerController(CustomerService customerService) {
+    public CustomerController(CustomerService customerService, JWTUtil jwtUtil) {
         // Field to hold a CustomerJPADataAccessService object
         this.customerService = customerService;
+        this.jwtUtil = jwtUtil;
     }
 
     // Endpoint to retrieve all customers
     @GetMapping
-    public List<Customer> getCustomers() {
+    public List<CustomerDTO> getCustomers() {
         return customerService.selectAllCustomers();  // Calls the selectAllCustomer() method of the
         // customerJPADataAccessService object
     }
 
     // Endpoint to retrieve a customer by ID (returns Optional)
     @GetMapping("{id}")
-    public Optional<Customer> getCustomers(@PathVariable("id") Integer id) {
-        return customerService.selectCustomerById(id);  // Calls the selectCustomerById() method of the
+    public Optional<CustomerDTO> getCustomers(@PathVariable("id") Integer id) {
+        return Optional.ofNullable(customerService.getCustomer(id));  // Calls the selectCustomerById() method of the
         // customerJPADataAccessService object
     }
 
     // Endpoint to add a new customer
     @PostMapping
-    public ResponseEntity<String> registerCustomer(@RequestBody CustomerRegReq request) {
+    public ResponseEntity<?> registerCustomer(@RequestBody CustomerRegReq request) {
         customerService.addCustomer(request);  // Calls the addCustomer() method of the customerService object
+        String jwtToken = jwtUtil.issueToken(request.email(),"ROLE_USER"); // Issue a token for the new customer
         String message = "Customer %s Successfully Created".formatted(request.name());  // Create success message
-        return ResponseEntity.ok(message);  // Returns a success response with the message
+        return ResponseEntity.ok()
+                .header(HttpHeaders.AUTHORIZATION, jwtToken)
+                .body(message);  // Returns a success response with the message
+//                .build();  // Returns a success response with the message
     }
 
     // Endpoint to delete a customer by ID

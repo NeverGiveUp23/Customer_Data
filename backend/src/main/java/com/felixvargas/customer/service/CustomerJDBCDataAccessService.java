@@ -26,7 +26,7 @@ public class CustomerJDBCDataAccessService implements CustomerDAO {
     public List<Customer> selectAllCustomer() {
         // SQL query to select all customers
         var sql = """
-                SELECT id, name, email, age, gender
+                SELECT id, name, email, password, age, gender
                 FROM customer
                 """;
         // Execute the query and map the result set to a list of Customer objects
@@ -38,7 +38,7 @@ public class CustomerJDBCDataAccessService implements CustomerDAO {
     public Optional<Customer> selectCustomerById(Integer id) {
         // SQL query to select a customer by id
         var sql = """
-                SELECT id, name, email, age, gender FROM customer WHERE id = ?
+                SELECT id, name, email, password, age, gender FROM customer WHERE id = ?
                 """;
         // Execute the query with the id as a parameter and map the result to a Customer object
         return jdbcTemplate.query(sql, customerRowMapper, id)
@@ -51,13 +51,14 @@ public class CustomerJDBCDataAccessService implements CustomerDAO {
     public void insertCustomer(Customer customer) {
         // SQL query to insert a new customer
         var sql = """
-                INSERT INTO customer(name, email, age, gender) VALUES (?, ?, ?, ?)
+                INSERT INTO customer(name, email, password, age, gender) VALUES (?, ?, ?, ?, ?)
                  """;
         // Execute the query with the customer's name, email, and age as parameters
         var result = jdbcTemplate.update(
                 sql,
                 customer.getName(),
                 customer.getEmail(),
+                customer.getPassword(),
                 customer.getAge(),
                 customer.getGender().name()
         );
@@ -128,5 +129,16 @@ public class CustomerJDBCDataAccessService implements CustomerDAO {
             jdbcTemplate.update(sql, update.getAge(), update.getId());
         }
 
+    }
+
+    @Override
+    public Optional<Customer> selectCustomerByEmail(String email) {
+        var sql = """
+                SELECT id, name, email, password, age, gender FROM customer WHERE email = ?
+                """;
+        // Execute the query with the id as a parameter and map the result to a Customer object
+        return jdbcTemplate.query(sql, customerRowMapper, email)
+                .stream()
+                .findFirst();
     }
 }

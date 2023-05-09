@@ -22,6 +22,7 @@ public class CustomerListDataAccessService implements CustomerDAO {
                 1,
                 "Felix",
                 "Felix@gmail.com",
+                "password",
                 29,
                 Gender.MALE);
         customers.add(felix);
@@ -30,6 +31,7 @@ public class CustomerListDataAccessService implements CustomerDAO {
                 2,
                 "Jane",
                 "Jane@gmail.com",
+                "password",
                 45,
                 Gender.MALE);
         customers.add(jane);
@@ -84,5 +86,12 @@ public class CustomerListDataAccessService implements CustomerDAO {
     public boolean existsPersonWithEmail(String email) {
         return customers.stream()
                 .anyMatch(c -> c.getEmail().equals(email));
+    }
+
+    @Override
+    public Optional<Customer> selectCustomerByEmail(String email) {
+        return customers.stream()
+                .filter(c -> c.getUsername().equals(email))
+                .findFirst();
     }
 }

@@ -38,10 +38,11 @@ const App = ()  => {
           return ( <SideBarWithHeader>
               <Center h={"500px"}>
                   <Spinner
+                      thickness='4px'
                       size='xl'
                       speed='0.65s'
                       emptyColor='gray.200'
-                      color='blue.500'
+                      color='facebook.500'
                   />
               </Center>
 
