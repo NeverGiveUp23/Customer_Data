@@ -17,6 +17,7 @@ public class AuthenticationController {
         this.authenticationService = authenticationService;
     }
 
+
     @PostMapping("login")
     public ResponseEntity<?> login(@RequestBody AuthenticationRequest authenticationRequest){
         AuthenticationResponse response = authenticationService.login(authenticationRequest);
