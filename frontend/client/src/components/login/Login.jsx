@@ -14,8 +14,9 @@ import {
     AlertIcon,
     Alert
 } from '@chakra-ui/react';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useAuth} from '../context/AuthContext.jsx';
+import CreateCustomerForm from "../CreateCustomerForm.jsx";
 import {Formik, Form, useField} from 'formik';
 import * as Yup from 'yup';
 import {useNavigate} from 'react-router-dom';
@@ -101,12 +102,14 @@ const Login = () => {
 
     const {customer} = useAuth();
     const navigate = useNavigate();
+    const [register, setRegister] = useState(false);
 
     useEffect(() => {
         if(customer) {
             navigate("/dashboard");
         }
     })
+
 
     return (
         <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
@@ -121,6 +124,11 @@ const Login = () => {
                     />
                     <Heading fontSize={'2xl'} mb='15'>Sign in to your account</Heading>
                     <LoginForm />
+                    <Link
+                        color={"facebook.500"} href={"/signup"}
+                    >
+                        Don't have an account? Sign Up!
+                    </Link>
                 </Stack>
             </Flex>
             <Flex
@@ -130,19 +138,15 @@ const Login = () => {
                 alignItems='center'
                 justifyContent='center'
                 bgGradient={[
-                    'linear(to-tr, teal.300, yellow.400)',
-                    'linear(to-t, blue.200, teal.500)',
-                    'linear(to-b, orange.100, purple.300)',
+                    'linear(to-b, facebook.100, facebook.600)',
                 ]}>
 
                 <Text
-                    fontSize={'6xl'}
-                    color={'black'}
+                    fontSize={'2xl'}
+                    color={'white'}
                     fontWeight={'bold'}
                     mb={5}>
-                    <Link href={"https://felixvargasjr.com"}>
-                        Enroll Now
-                    </Link>
+                    Welcome to Customer Data!
                 </Text>
                 <Image
                     alt={'Login Image'}

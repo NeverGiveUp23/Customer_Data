@@ -42,7 +42,7 @@ const MySelect = ({label, ...props}) => {
 };
 
 // And now we can use these
-const CreateCustomerForm = ({ fetchCustomers }) => {
+const CreateCustomerForm = ({ onSuccess }) => {
     return (
         <>
             <Formik
@@ -83,7 +83,7 @@ const CreateCustomerForm = ({ fetchCustomers }) => {
                                 "Customer saved",
                                 `${customer.name} was successfully added`
                             )
-                            fetchCustomers();
+                            onSuccess(res.headers["authorization"]); // optional refetch
                         }).catch(err => {
                         console.log(err);
                         errorNotification(
@@ -132,7 +132,7 @@ const CreateCustomerForm = ({ fetchCustomers }) => {
                                 <option value="FEMALE">Female</option>
                             </MySelect>
 
-                            <Button disabled={!isValid || isSubmitting} type="submit">Submit</Button>
+                            <Button isDisabled={!isValid || isSubmitting} type="submit">Submit</Button>
                         </Stack>
                     </Form>
                 )}
