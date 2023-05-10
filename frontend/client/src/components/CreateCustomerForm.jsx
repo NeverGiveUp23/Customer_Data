@@ -4,6 +4,8 @@ import {Alert, AlertIcon, Box, Button, FormLabel, Input, Select, Stack} from "@c
 import {saveCustomer} from "../services/client.jsx";
 import {successNotification, errorNotification} from "../services/Notification.js";
 
+
+
 const MyTextInput = ({label, ...props}) => {
     // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
     // which we can spread on <input>. We can use field meta to show an error
