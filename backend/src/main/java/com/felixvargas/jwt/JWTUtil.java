@@ -39,7 +39,7 @@ public class JWTUtil {
                 .setSubject(username) // subject of the token
                 .setIssuer("https://customer.com") // who creates the token and signs it
                 .setIssuedAt(Date.from(Instant.now())) // when the token was issued/created (now)
-                .setExpiration(Date.from(Instant.now().plus(15, ChronoUnit.DAYS))) // token validity
+                .setExpiration(Date.from(Instant.now().plus(1, ChronoUnit.DAYS))) // token validity
                 .signWith(getKey(), SignatureAlgorithm.HS256) // signature algorithm and key
                 .compact(); // compact into a string
 

@@ -43,6 +43,7 @@ public class SecurityFilterChainConfig {
             ) // allow POST on /api/v1/customer
             .permitAll()
             .requestMatchers(HttpMethod.GET,"/ping")
+            // allow GET on /ping
             .permitAll()
             .anyRequest()
             .authenticated()
