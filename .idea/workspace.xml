@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Registration form/solution">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__Initial_Setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__Initial_Setup.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +34,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -101,7 +106,7 @@
       <recent name="$PROJECT_DIR$/frontend/client/src/components" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="JUnit.AuthenticationIT.canLogin">
     <configuration name="AuthenticationIT.canLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer-api" />
       <extension name="coverage">
@@ -187,10 +192,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AuthenticationIT.canLogin" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="JUnit.CustomerIT.canRegisterACustomer" />
         <item itemvalue="JUnit.felixvargas in customer-api" />
-        <item itemvalue="JUnit.AuthenticationIT.canLogin" />
         <item itemvalue="JUnit.CustomerIT.canDeleteCustomer" />
       </list>
     </recent_temporary>
@@ -206,14 +211,7 @@
       <workItem from="1682048769206" duration="7281000" />
       <workItem from="1683134721443" duration="10370000" />
       <workItem from="1683168450490" duration="71829000" />
-      <workItem from="1683761141839" duration="3240000" />
-    </task>
-    <task id="LOCAL-00015" summary="Adjusting spinner">
-      <created>1682708532599</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1682708532599</updated>
+      <workItem from="1683761141839" duration="4885000" />
     </task>
     <task id="LOCAL-00016" summary="Adjusting spinner">
       <created>1682708575780</created>
@@ -551,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683769625376</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Registration form/solution">
+      <created>1683770054453</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1683770054453</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
