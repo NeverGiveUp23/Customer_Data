@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Registration form/solution">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/UpdateCustomer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/UpdateCustomer.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,14 +210,7 @@
       <workItem from="1682048769206" duration="7281000" />
       <workItem from="1683134721443" duration="10370000" />
       <workItem from="1683168450490" duration="71829000" />
-      <workItem from="1683761141839" duration="607000" />
-    </task>
-    <task id="LOCAL-00013" summary="Adjusting spinner">
-      <created>1682704255344</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1682704255344</updated>
+      <workItem from="1683761141839" duration="2567000" />
     </task>
     <task id="LOCAL-00014" summary="Adjusting spinner">
       <created>1682708476829</created>
@@ -553,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683753536797</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Registration form/solution">
+      <created>1683767839889</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1683767839889</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
