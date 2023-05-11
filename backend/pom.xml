@@ -125,6 +125,15 @@
             <version>${jsonwebtoken.version}</version>
             <scope>runtime</scope>
         </dependency>
+        <!--   JWT -->
+
+        <!--   Actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--   Actuator -->
+
     </dependencies>
 
     <build>

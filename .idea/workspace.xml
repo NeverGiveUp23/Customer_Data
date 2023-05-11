@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Registration form/solution">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerrun.aws.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerrun.aws.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/security/SecurityFilterChainConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/security/SecurityFilterChainConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,30 +71,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "import_schema_mapping": "<schema-mapping>\n  <databases>\n    <list>\n      <schema-mapping-item>\n        <source-data-source-id>d9b6fc0f-0170-4fb5-b743-ac88af59c066</source-data-source-id>\n        <source-path>database/&quot;postgres&quot;</source-path>\n        <target-data-source-id>d9b6fc0f-0170-4fb5-b743-ac88af59c066</target-data-source-id>\n        <target-path>database/&quot;customer&quot;/schema/&quot;public&quot;</target-path>\n      </schema-mapping-item>\n    </list>\n  </databases>\n</schema-mapping>",
-    "last_opened_file_path": "/Users/felix/Downloads/CustomerData/backend/src/main/resources/db/migration",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "f518505e105f28558ff82bbd17d9a1e5",
-    "ts.external.directory.path": "/private/var/folders/lt/c4p6dz4n40d79lps6pyvqvlh0000gn/T/AppTranslocation/D4B35C2D-EACF-4C2B-A153-29049C6230AA/d/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;import_schema_mapping&quot;: &quot;&lt;schema-mapping&gt;\n  &lt;databases&gt;\n    &lt;list&gt;\n      &lt;schema-mapping-item&gt;\n        &lt;source-data-source-id&gt;d9b6fc0f-0170-4fb5-b743-ac88af59c066&lt;/source-data-source-id&gt;\n        &lt;source-path&gt;database/&amp;quot;postgres&amp;quot;&lt;/source-path&gt;\n        &lt;target-data-source-id&gt;d9b6fc0f-0170-4fb5-b743-ac88af59c066&lt;/target-data-source-id&gt;\n        &lt;target-path&gt;database/&amp;quot;customer&amp;quot;/schema/&amp;quot;public&amp;quot;&lt;/target-path&gt;\n      &lt;/schema-mapping-item&gt;\n    &lt;/list&gt;\n  &lt;/databases&gt;\n&lt;/schema-mapping&gt;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/felix/Downloads/CustomerData/backend/src/main/resources/db/migration&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;f518505e105f28558ff82bbd17d9a1e5&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/private/var/folders/lt/c4p6dz4n40d79lps6pyvqvlh0000gn/T/AppTranslocation/D4B35C2D-EACF-4C2B-A153-29049C6230AA/d/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -107,7 +107,7 @@
       <recent name="$PROJECT_DIR$/frontend/client/src/components" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.Main">
     <configuration name="AuthenticationIT.canLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer-api" />
       <extension name="coverage">
@@ -209,14 +209,7 @@
       <workItem from="1682048769206" duration="7281000" />
       <workItem from="1683134721443" duration="10370000" />
       <workItem from="1683168450490" duration="71829000" />
-      <workItem from="1683761141839" duration="11780000" />
-    </task>
-    <task id="LOCAL-00017" summary="Adjusting spinner">
-      <created>1682968564620</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1682968564620</updated>
+      <workItem from="1683761141839" duration="17921000" />
     </task>
     <task id="LOCAL-00018" summary="Adjusting spinner">
       <created>1682968622873</created>
@@ -554,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683771801394</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Registration form/solution">
+      <created>1683818545979</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1683818545979</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

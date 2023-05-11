@@ -40,10 +40,9 @@ public class SecurityFilterChainConfig {
                     "/api/v1/customer",
                     "/api/v1/auth/login"
 
-            ) // allow POST on /api/v1/customer
+            ) // allow POST on /api/v1/customer & /api/v1/auth/login
             .permitAll()
-            .requestMatchers(HttpMethod.GET,"/ping")
-            // allow GET on /ping
+            .requestMatchers(HttpMethod.GET,"/actuator/**")
             .permitAll()
             .anyRequest()
             .authenticated()
