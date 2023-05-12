@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="expose metrics and health and add application-dev.yml">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="expose metrics and health and add application-dev.yml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -207,14 +204,7 @@
       <workItem from="1683168450490" duration="71829000" />
       <workItem from="1683761141839" duration="19446000" />
       <workItem from="1683832295899" duration="94000" />
-      <workItem from="1683832397870" duration="4050000" />
-    </task>
-    <task id="LOCAL-00019" summary="Adjusting spinner">
-      <created>1682969202559</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1682969202559</updated>
+      <workItem from="1683832397870" duration="4700000" />
     </task>
     <task id="LOCAL-00020" summary="Adjusting spinner">
       <created>1682969413970</created>
@@ -552,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683827867482</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="expose metrics and health and add application-dev.yml">
+      <created>1683896537939</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1683896537939</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -23,8 +23,6 @@ public class Main {
     }
 
 
-
-
     @Bean
     CommandLineRunner runner(
             CustomerRepository customerRepository, PasswordEncoder passwordEncoder) {
