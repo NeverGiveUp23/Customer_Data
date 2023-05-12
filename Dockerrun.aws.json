@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "customer-api",
-      "image": "felixvjr23/customer-api:11.05.2023.15.23.18",
+      "image": "felixvjr23/customer-api:12.05.2023.15.11.56",
       "essential": true,
       "memory": 512,
       "portMappings": [
