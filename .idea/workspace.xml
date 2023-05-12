@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="expose metrics and health and add application-dev.yml">
+      <change afterPath="$PROJECT_DIR$/frontend/client/src/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerrun.aws.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerrun.aws.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/Customer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/shared/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/shared/SideBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/signup/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/signup/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/client/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/main.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,35 +72,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;import_schema_mapping&quot;: &quot;&lt;schema-mapping&gt;\n  &lt;databases&gt;\n    &lt;list&gt;\n      &lt;schema-mapping-item&gt;\n        &lt;source-data-source-id&gt;d9b6fc0f-0170-4fb5-b743-ac88af59c066&lt;/source-data-source-id&gt;\n        &lt;source-path&gt;database/&amp;quot;postgres&amp;quot;&lt;/source-path&gt;\n        &lt;target-data-source-id&gt;d9b6fc0f-0170-4fb5-b743-ac88af59c066&lt;/target-data-source-id&gt;\n        &lt;target-path&gt;database/&amp;quot;customer&amp;quot;/schema/&amp;quot;public&amp;quot;&lt;/target-path&gt;\n      &lt;/schema-mapping-item&gt;\n    &lt;/list&gt;\n  &lt;/databases&gt;\n&lt;/schema-mapping&gt;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/felix/Downloads/CustomerData/backend/src/main/resources/db/migration&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;f518505e105f28558ff82bbd17d9a1e5&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/private/var/folders/lt/c4p6dz4n40d79lps6pyvqvlh0000gn/T/AppTranslocation/D4B35C2D-EACF-4C2B-A153-29049C6230AA/d/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "import_schema_mapping": "<schema-mapping>\n  <databases>\n    <list>\n      <schema-mapping-item>\n        <source-data-source-id>d9b6fc0f-0170-4fb5-b743-ac88af59c066</source-data-source-id>\n        <source-path>database/&quot;postgres&quot;</source-path>\n        <target-data-source-id>d9b6fc0f-0170-4fb5-b743-ac88af59c066</target-data-source-id>\n        <target-path>database/&quot;customer&quot;/schema/&quot;public&quot;</target-path>\n      </schema-mapping-item>\n    </list>\n  </databases>\n</schema-mapping>",
+    "last_opened_file_path": "/Users/felix/Downloads/CustomerData/frontend/client/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "spring.configuration.checksum": "f518505e105f28558ff82bbd17d9a1e5",
+    "ts.external.directory.path": "/private/var/folders/lt/c4p6dz4n40d79lps6pyvqvlh0000gn/T/AppTranslocation/D4B35C2D-EACF-4C2B-A153-29049C6230AA/d/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/client/src" />
       <recent name="$PROJECT_DIR$/backend/src/main/resources/db/migration" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -207,21 +213,7 @@
       <workItem from="1683168450490" duration="71829000" />
       <workItem from="1683761141839" duration="19446000" />
       <workItem from="1683832295899" duration="94000" />
-      <workItem from="1683832397870" duration="7840000" />
-    </task>
-    <task id="LOCAL-00022" summary="Adjusting spinner">
-      <created>1682970991484</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1682970991484</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Adjusting spinner">
-      <created>1682971159476</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1682971159476</updated>
+      <workItem from="1683832397870" duration="12436000" />
     </task>
     <task id="LOCAL-00024" summary="Adjusting spinner">
       <created>1682975177579</created>
@@ -552,11 +544,36 @@
       <option name="project" value="LOCAL" />
       <updated>1683898291354</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="expose metrics and health and add application-dev.yml">
+      <created>1683904178148</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1683904178148</updated>
+    </task>
+    <task id="LOCAL-00072" summary="expose metrics and health and add application-dev.yml">
+      <created>1683904275288</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1683904275288</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ADDING NEW COLUMN &quot;GENDER&quot; TO CUSTOMER DB &amp; ADJUSTING TEST CLASSES" />
