@@ -43,7 +43,7 @@ public class SecurityFilterChainConfig {
 
             ) // allow POST on /api/v1/customer & /api/v1/auth/login
             .permitAll()
-            .requestMatchers(HttpMethod.GET,"/actuator/**")
+            .requestMatchers(HttpMethod.GET,"/actuator/health")
             .permitAll()
             .anyRequest()
             .authenticated()

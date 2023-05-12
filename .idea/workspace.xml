@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="expose metrics and health and add application-dev.yml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerrun.aws.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerrun.aws.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +103,7 @@
       <recent name="$PROJECT_DIR$/frontend/client/src/components" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.Main">
     <configuration name="AuthenticationIT.canLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer-api" />
       <extension name="coverage">
@@ -206,14 +207,7 @@
       <workItem from="1683168450490" duration="71829000" />
       <workItem from="1683761141839" duration="19446000" />
       <workItem from="1683832295899" duration="94000" />
-      <workItem from="1683832397870" duration="5669000" />
-    </task>
-    <task id="LOCAL-00021" summary="Adjusting spinner">
-      <created>1682969487888</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1682969487888</updated>
+      <workItem from="1683832397870" duration="7840000" />
     </task>
     <task id="LOCAL-00022" summary="Adjusting spinner">
       <created>1682970991484</created>
@@ -551,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683896640393</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="expose metrics and health and add application-dev.yml">
+      <created>1683898291354</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1683898291354</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

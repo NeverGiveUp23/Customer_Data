@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "customer-api",
-      "image": "felixvjr23/customer-api:12.05.2023.13.32.15",
+      "image": "felixvjr23/customer-api:11.05.2023.15.23.18",
       "essential": true,
       "memory": 512,
       "portMappings": [
@@ -15,7 +15,7 @@
       "environment": [
         {
           "name": "SPRING_DATASOURCE_URL",
-          "value": "awseb-e-dmgnt7mtsq-stack-awsebrdsdatabase-o1adcc55hezu.ck40tlw5zo9p.us-east-2.rds.amazonaws.com:5432/ebdb"
+          "value": "jdbc:postgresql://awseb-e-dmgnt7mtsq-stack-awsebrdsdatabase-cictgejveylr.ck40tlw5zo9p.us-east-2.rds.amazonaws.com:5432/ebdb"
         }
       ]
     }
