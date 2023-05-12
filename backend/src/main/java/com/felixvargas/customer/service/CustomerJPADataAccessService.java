@@ -3,6 +3,8 @@ package com.felixvargas.customer.service;
 import com.felixvargas.customer.interfaces.CustomerDAO;
 import com.felixvargas.customer.model.Customer;
 import com.felixvargas.customer.repository.CustomerRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -22,7 +24,9 @@ public class CustomerJPADataAccessService implements CustomerDAO {
     // getting findAll() -> customerRepository
     @Override
     public List<Customer> selectAllCustomer() {
-        return customerRepository.findAll();
+        Page<Customer> page = customerRepository.findAll(Pageable.ofSize(15));
+
+        return page.getContent();
     }
 
     // getting findById() -> customerRepository -> Has to be Optional<Customer> , we want to error handle if a

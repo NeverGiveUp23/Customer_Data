@@ -33,7 +33,7 @@ public class Main {
             String firstName = name.firstName();
             String lastName = name.lastName();
             Random random = new Random();
-            String email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@felixvargas.com";
+            String email = firstName.toLowerCase() + "-" + lastName.toLowerCase() + "@felixvargas.com";
             int age = random.nextInt(16, 99);
 
             Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;

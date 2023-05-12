@@ -1,7 +1,6 @@
 package com.felixvargas.journey;
 
 import com.felixvargas.customer.DTO.CustomerDTO;
-import com.felixvargas.customer.model.Customer;
 import com.felixvargas.customer.enums.Gender;
 import com.felixvargas.customer.records.CustomerRegReq;
 import com.felixvargas.customer.records.CustomerUpdateRequest;
@@ -11,20 +10,21 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) // port available at random each time
+
+@SpringBootTest(webEnvironment = RANDOM_PORT) // port available at random each time
 // your test runs
 public class CustomerIT {
 
@@ -80,8 +80,8 @@ public class CustomerIT {
                 .getResponseBody();
         // make sure that customer is present
 
-        assert getAllCustomer != null;
-        var id = getAllCustomer.stream().filter(customer -> customer.email().equals(email))
+        var id = getAllCustomer.stream()
+                .filter(customer -> customer.email().equals(email))
                 .map(CustomerDTO::id)
                 .findFirst()
                 .orElseThrow();
@@ -204,9 +204,12 @@ public class CustomerIT {
         Name fakerName = faker.name();
 
         String name = fakerName.fullName();
-        String email = fakerName.lastName() + "-" + UUID.randomUUID() + "@animal123.com";
+        String email = fakerName.lastName() + "-" + UUID.randomUUID() + "@felixvargas.com";
+        System.out.println("Email: " + email);
         int age = RANDOM.nextInt(1, 100);
+
         Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
+
         CustomerRegReq request = new CustomerRegReq(
                 name, email, "password", age, gender
         );
@@ -218,12 +221,12 @@ public class CustomerIT {
                 .contentType(APPLICATION_JSON)
                 .body(Mono.just(request), CustomerRegReq.class)
                 .exchange()
-                .expectStatus()
-                .isOk()
+                .expectStatus().isOk()
                 .returnResult(Void.class)
                 .getResponseHeaders()
                 .get(AUTHORIZATION)
                 .get(0);
+
 
         // get all customers
         List<CustomerDTO> allCustomers = webTestClient.get()
@@ -231,26 +234,27 @@ public class CustomerIT {
                 .accept(APPLICATION_JSON)
                 .header(AUTHORIZATION, String.format("Bearer %s", jwtToken))
                 .exchange()
-                .expectStatus()
-                .isOk()
+                .expectStatus().isOk()
                 .expectBodyList(new ParameterizedTypeReference<CustomerDTO>() {
                 })
                 .returnResult()
                 .getResponseBody();
 
         int id = allCustomers.stream()
-                .filter(customer -> customer.email().equals(email))
+                .filter(customer -> customer.username().equals(email))
                 .map(CustomerDTO::id)
                 .findFirst()
                 .orElseThrow();
 
-        // update customer
-
+// Update customer
         String newName = "aly";
 
         CustomerUpdateRequest updateRequest = new CustomerUpdateRequest(
                 newName, null, null
         );
+
+
+
 
         webTestClient.put()
                 .uri(CUSTOMER_URI + "/{id}", id)
@@ -259,17 +263,16 @@ public class CustomerIT {
                 .contentType(APPLICATION_JSON)
                 .body(Mono.just(updateRequest), CustomerUpdateRequest.class)
                 .exchange()
-                .expectStatus()
-                .isOk();
+                .expectStatus().isOk()
+                .expectBody(Void.class);
 
-        // get customer by id
+// Get customer by ID
         CustomerDTO updatedCustomer = webTestClient.get()
                 .uri(CUSTOMER_URI + "/{id}", id)
                 .accept(APPLICATION_JSON)
                 .header(AUTHORIZATION, String.format("Bearer %s", jwtToken))
                 .exchange()
-                .expectStatus()
-                .isOk()
+                .expectStatus().isOk()
                 .expectBody(CustomerDTO.class)
                 .returnResult()
                 .getResponseBody();
