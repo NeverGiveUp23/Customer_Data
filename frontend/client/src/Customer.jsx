@@ -6,7 +6,7 @@ import CardWithImage from './components/Card';
 import DrawerForm from './components/DrawerForm.jsx';
 import { errorNotification} from "./services/Notification.js";
 
-const App = ()  => {
+const Customer = ()  => {
     const [ customers, setCustomers] = useState([]);
     const [ isLoading, setIsLoading] = useState(false);
     const [err, setErr] = useState("");
@@ -87,4 +87,4 @@ const App = ()  => {
     )
 }
 
-export default App;
+export default Customer;
