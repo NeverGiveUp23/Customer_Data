@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="expose metrics and health and add application-dev.yml">
-      <change afterPath="$PROJECT_DIR$/frontend/client/src/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/Customer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/shared/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/shared/SideBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/signup/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/signup/SignUp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/main.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="expose metrics and health and add application-dev.yml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,8 +101,8 @@
       <recent name="$PROJECT_DIR$/frontend/client/src/components" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
-    <configuration name="AuthenticationIT.canLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CustomerIT.canRegisterACustomer">
+    <configuration name="CustomerIT.canDeleteCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer-api" />
       <extension name="coverage">
         <pattern>
@@ -119,8 +111,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.felixvargas.journey" />
-      <option name="MAIN_CLASS_NAME" value="com.felixvargas.journey.AuthenticationIT" />
-      <option name="METHOD_NAME" value="canLogin" />
+      <option name="MAIN_CLASS_NAME" value="com.felixvargas.journey.CustomerIT" />
+      <option name="METHOD_NAME" value="canDeleteCustomer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,6 +129,38 @@
       <option name="PACKAGE_NAME" value="com.felixvargas.journey" />
       <option name="MAIN_CLASS_NAME" value="com.felixvargas.journey.CustomerIT" />
       <option name="METHOD_NAME" value="canRegisterACustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerIT.canUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.felixvargas.journey.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.felixvargas.journey" />
+      <option name="MAIN_CLASS_NAME" value="com.felixvargas.journey.CustomerIT" />
+      <option name="METHOD_NAME" value="canUpdate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerJPADataAccessServiceTest.selectAllCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.felixvargas.customer.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.felixvargas.customer.service" />
+      <option name="MAIN_CLASS_NAME" value="com.felixvargas.customer.service.CustomerJPADataAccessServiceTest" />
+      <option name="METHOD_NAME" value="selectAllCustomer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -169,34 +193,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.customer-api: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="customer-api" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.customer-api: Compose Deployment" />
-        <item itemvalue="JUnit.AuthenticationIT.canLogin" />
         <item itemvalue="JUnit.CustomerIT.canRegisterACustomer" />
+        <item itemvalue="JUnit.CustomerIT.canUpdate" />
+        <item itemvalue="JUnit.CustomerJPADataAccessServiceTest.selectAllCustomer" />
         <item itemvalue="JUnit.felixvargas in customer-api" />
+        <item itemvalue="JUnit.CustomerIT.canDeleteCustomer" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +216,7 @@
       <workItem from="1683168450490" duration="71829000" />
       <workItem from="1683761141839" duration="19446000" />
       <workItem from="1683832295899" duration="94000" />
-      <workItem from="1683832397870" duration="12436000" />
+      <workItem from="1683832397870" duration="19904000" />
     </task>
     <task id="LOCAL-00024" summary="Adjusting spinner">
       <created>1682975177579</created>
