@@ -8,4 +8,5 @@ CREATE TABLE customer
     age   INT  NOT NULL
 );
 
+
 CREATE SEQUENCE IF NOT EXISTS customer_id_seq START WITH 1 INCREMENT BY 1;

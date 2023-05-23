@@ -43,7 +43,9 @@ public class SecurityFilterChainConfig {
 
             ) // allow POST on /api/v1/customer & /api/v1/auth/login without authentication
             .permitAll()
-            .requestMatchers(HttpMethod.GET,"/actuator/health")
+            .requestMatchers(HttpMethod.GET,
+                    "/actuator/health",
+                    "/api/v1/customer/*/profile-image")
             .permitAll()
             .anyRequest()
             .authenticated()
@@ -52,7 +54,10 @@ public class SecurityFilterChainConfig {
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // <- disable session creation
             .and()
             .authenticationProvider(authenticationProvider) // <- add the authentication provider
-            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class) // <- add the JWT authentication filter
+            .addFilterBefore(
+                    jwtAuthenticationFilter,
+                    UsernamePasswordAuthenticationFilter.class
+            ) // <- add the JWT authentication filter
             .exceptionHandling()
             .authenticationEntryPoint(authenticationEntryPoint);
     return http.build();

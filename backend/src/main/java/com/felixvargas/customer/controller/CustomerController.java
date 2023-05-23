@@ -7,8 +7,10 @@ import com.felixvargas.customer.records.CustomerUpdateRequest;
 import com.felixvargas.customer.service.CustomerService;
 import com.felixvargas.jwt.JWTUtil;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -66,5 +68,27 @@ public class CustomerController {
     public void updateCustomer(@PathVariable("customerId") Integer customerId,
                                @RequestBody CustomerUpdateRequest customerUpdateRequest) {
         customerService.updateCustomer(customerId, customerUpdateRequest);  // Calls the updateCustomer() method of the customerService object
+    }
+
+
+//     upload s3 image
+    @PostMapping(
+            value = "{customerId}/profile-image",
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE
+    )
+    public void uploadCustomerProfilePic(@PathVariable("customerId") Integer customerId,
+                                         @RequestParam("file")MultipartFile multipartFile){
+
+        customerService.uploadCustomerImage(customerId, multipartFile);
+
+    }
+
+    @GetMapping(
+            value = "{customerId}/profile-image",
+            produces = MediaType.IMAGE_JPEG_VALUE)
+    public byte[] getCustomerProfilePicture(@PathVariable("customerId") Integer customerId){
+
+       return customerService.getCustomerProfileImage(customerId);
+
     }
 }

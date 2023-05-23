@@ -21,7 +21,8 @@ public CustomerDTO apply(Customer customer){
                     .stream()
                     .map(r -> r.getAuthority())
                     .collect(Collectors.toList()),
-            customer.getUsername());
+            customer.getUsername(),
+           customer.getProfileImageId());
 }
 
 }

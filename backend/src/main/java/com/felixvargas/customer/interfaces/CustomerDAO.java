@@ -10,7 +10,7 @@ public interface CustomerDAO {
 
     List<Customer> selectAllCustomer();
 
-    Optional<Customer> selectCustomerById(Integer id);
+    Optional<Customer> selectCustomerById(Integer customerId);
 
     void insertCustomer(Customer customer);
 
@@ -18,9 +18,11 @@ public interface CustomerDAO {
 
     void deleteCustomerById(Integer customerId);
 
-    boolean existsPersonWithId(Integer Id);
+    boolean existsPersonWithId(Integer customerId);
 
     void updateCustomer(Customer update);
+
+    void updateCustomerProfileImageId(String profileImageId, Integer customerId);
 
     Optional<Customer> selectCustomerByEmail(String email);
 }
