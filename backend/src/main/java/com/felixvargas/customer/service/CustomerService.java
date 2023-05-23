@@ -9,12 +9,18 @@ import com.felixvargas.customer.records.CustomerUpdateRequest;
 import com.felixvargas.exception.DuplicateResourceException;
 import com.felixvargas.exception.RequestValidationException;
 import com.felixvargas.exception.ResourceNotFoundException;
+import com.felixvargas.s3.S3Buckets;
+import com.felixvargas.s3.S3Service;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 
@@ -24,11 +30,41 @@ public class CustomerService {
     private final CustomerDAO customerDAO;  // field to hold a CustomerDAO object
     private final PasswordEncoder passwordEncoder;  // field to hold a PasswordEncoder object
     // Constructor that injects a CustomerDAO object using the @Qualifier annotation
-
+    private final S3Service s3Service;
+    private final S3Buckets s3Buckets;
     private final CustomerDTOMapper customerDTOMapper;
-    public CustomerService(@Qualifier("jpa") CustomerDAO customerDAO, PasswordEncoder passwordEncoder, CustomerDTOMapper customerDTOMapper) {
+
+    // Method to check if a customer with the specified ID exists in the DB
+    private void checkIfCustomerExists(Integer customerId){
+        if (!customerDAO.existsPersonWithId(customerId)) {
+            throw new ResourceNotFoundException(
+                    "Customer with id %s not found".formatted(customerId)
+            );  // Throws exception if customer with the specified ID does not exist
+        }
+    }
+
+    // Method to check if a customer with the specified email exists in the DB
+    private void checkIfEmailExists(String email, String email_already_taken) {
+        if (customerDAO.existsPersonWithEmail(email)) {
+            throw new DuplicateResourceException(email_already_taken);  // Throws exception if email already exists
+        }
+    }
+
+    private void checkIfCustomerExistsOrThrow(Integer customerId) {
+        if(!customerDAO.existsPersonWithId(customerId)) {
+            throw new ResourceNotFoundException(
+                    "Customer with id %s not found".formatted(customerId)
+            );
+        }
+    }
+
+
+
+    public CustomerService(@Qualifier("jpa") CustomerDAO customerDAO, PasswordEncoder passwordEncoder, S3Service s3Service, S3Buckets s3Buckets, CustomerDTOMapper customerDTOMapper) {
         this.customerDAO = customerDAO;
         this.passwordEncoder = passwordEncoder;
+        this.s3Service = s3Service;
+        this.s3Buckets = s3Buckets;
         this.customerDTOMapper = customerDTOMapper;
     }
 
@@ -49,9 +85,7 @@ public class CustomerService {
     public void addCustomer(CustomerRegReq customerRegReq) {
         // Check if email already exists in the database
         String email = customerRegReq.email();  // Extract email from customerRegReq
-        if (customerDAO.existsPersonWithEmail(email)) {
-            throw new DuplicateResourceException("email already taken");  // Throws exception if email already exists
-        }
+        checkIfEmailExists(email, "email already taken");
         // Create a new customer object using data from customerRegReq and insert it into the database
         Customer newCustomer = new Customer(
                 customerRegReq.name(),
@@ -62,13 +96,11 @@ public class CustomerService {
         customerDAO.insertCustomer(newCustomer);
     }
 
+
+
     // Method to delete a customer by ID from the database
     public void deleteCustomerById(Integer customerId) {
-        if (!customerDAO.existsPersonWithId(customerId)) {
-            throw new ResourceNotFoundException(
-                    "Customer with id %s not found".formatted(customerId)
-            );  // Throws exception if customer with the specified ID does not exist
-        }
+        checkIfCustomerExists(customerId);
         customerDAO.deleteCustomerById(customerId);  // Deletes the customer from the database
     }
 
@@ -102,11 +134,7 @@ public class CustomerService {
         }
 
         if (customerUpdateRequest.email() != null && !customerUpdateRequest.email().equals(customer.getEmail())) {
-            if (customerDAO.existsPersonWithEmail(customerUpdateRequest.email())) {
-                throw new DuplicateResourceException(
-                        "Email already exist"
-                );  // Throws exception if the new email already exists in the database
-            }
+            checkIfEmailExists(customerUpdateRequest.email(), "Email already exist");
             customer.setEmail(customerUpdateRequest.email());  // Update the email field in the customer object
             changes = true;
         }
@@ -117,5 +145,46 @@ public class CustomerService {
 
         customerDAO.updateCustomer(customer);  // Updates the customer in the database
     }
+
+    public void uploadCustomerImage(Integer customerId, MultipartFile multipartFile) {
+            checkIfCustomerExistsOrThrow(customerId);
+        String profileImageId = UUID.randomUUID().toString();
+        try {
+            s3Service.putObject(
+                    s3Buckets.getCustomer(),
+                    "profile-images/%s/%s".formatted(customerId, profileImageId),
+                    multipartFile.getBytes()
+            );
+        } catch (IOException e) {
+            throw new RuntimeException("failed to upload profile image", e);
+        }
+        customerDAO.updateCustomerProfileImageId(profileImageId, customerId);
+    }
+
+
+
+    public byte[] getCustomerProfileImage(Integer customerId) {
+        var customer =  customerDAO.selectCustomerById(customerId)
+                .map(customerDTOMapper)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Customer with id %s not found".formatted(customerId)
+                ));
+
+        if(StringUtils.isBlank(customer.profileImageId())){
+            throw new ResourceNotFoundException(
+                    "Customer with id %s profile image not found".formatted(customerId));
+        }
+        // type of profileImage is byte[]
+        byte[] profileImage = s3Service.getObject(
+                s3Buckets.getCustomer(),
+                "profile-images/%s/%s".formatted(customerId, customer.profileImageId())
+        );
+
+        return profileImage;
+    }
+
+
+
+
 }
 

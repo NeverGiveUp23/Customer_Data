@@ -127,4 +127,18 @@ class CustomerJPADataAccessServiceTest {
         // Then
         Mockito.verify(customerRepositoryMock).existsCustomerByEmail(email);
     }
+
+
+    @Test
+    void canUpdateProfileImageId() {
+
+        String profileIMageId = "test";
+        Integer customerId = 1;
+
+        //When
+        underTest.updateCustomerProfileImageId(profileIMageId, customerId);
+
+        //then
+        verify(customerRepositoryMock).updateProfileImageId(profileIMageId, customerId);
+    }
 }

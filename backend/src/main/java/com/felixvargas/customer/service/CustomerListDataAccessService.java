@@ -75,6 +75,11 @@ public class CustomerListDataAccessService implements CustomerDAO {
         customers.add(update);
     }
 
+    @Override
+    public void updateCustomerProfileImageId(String profileImageId, Integer customerId) {
+        // TODO: implement this
+    }
+
     // insert customer into the List
     @Override
     public void insertCustomer(Customer customer) {
