@@ -39,7 +39,8 @@ public class SecurityFilterChainConfig {
             .authorizeRequests()
             .requestMatchers(HttpMethod.POST,
                     "/api/v1/customer",
-                    "/api/v1/auth/login"
+                    "/api/v1/auth/login",
+                    "/api/v1/customer/*/profile-image"
 
             ) // allow POST on /api/v1/customer & /api/v1/auth/login without authentication
             .permitAll()

@@ -139,6 +139,6 @@ class CustomerJPADataAccessServiceTest {
         underTest.updateCustomerProfileImageId(profileIMageId, customerId);
 
         //then
-        verify(customerRepositoryMock).updateProfileImageId(profileIMageId, customerId);
+        verify(customerRepositoryMock).updateCustomerProfileImageId(profileIMageId, customerId);
     }
 }

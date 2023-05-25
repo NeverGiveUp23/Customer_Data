@@ -9,6 +9,7 @@ import { errorNotification} from "./services/Notification.js";
 const Customer = ()  => {
     const [ customers, setCustomers] = useState([]);
     const [ isLoading, setIsLoading] = useState(false);
+    const [isNewCustomer, setIsNewCustomer] = useState(false);
     const [err, setErr] = useState("");
 
     const fetchCustomers =  () => {
@@ -35,7 +36,8 @@ const Customer = ()  => {
     }, []);
 
         if(isLoading){
-          return ( <SideBarWithHeader>
+          return ( <SideBarWithHeader customers={customers}>
+
               <Center h={"500px"}>
                   <Spinner
                       thickness='4px'
@@ -51,10 +53,13 @@ const Customer = ()  => {
 
     if(err || customers.length <= 0) {
         return (
-            <SideBarWithHeader>
+            <SideBarWithHeader customers={customers}>
+
                 <Center h={"500px"}>
 
                     <DrawerForm
+                        isNewCustomer={isNewCustomer}
+                        setIsNewCustomer={setIsNewCustomer}
                         fetchCustomers={fetchCustomers}
                     />
                     <Text fontSize={"4xl"} ml={'30px'}>
@@ -66,23 +71,26 @@ const Customer = ()  => {
     }
 
     return (
-        <SideBarWithHeader justify={"center"} align={"center"}>
+        <SideBarWithHeader  customers={customers} // this will pass all the props of customer to SideBarWithHeader
+                            justify={"center"}
+                            align={"center"}>
             <DrawerForm
-            fetchCustomers={fetchCustomers}
+                fetchCustomers={fetchCustomers}
             />
             <Wrap justify={"center"} spacing={"30px"}>
                 {customers.map((customer, index) => (
                     <WrapItem key={index}>
                         <CardWithImage
+                            isNewCustomer={isNewCustomer}
+                            setIsNewCustomer={setIsNewCustomer}
                             fetchCustomers={fetchCustomers}
-                            {...customer}
+                            {...customer} // this will pass all the props of customer to CardWithImage
                             imageNumber={index}
                         />
                     </WrapItem>
 
                 ))}
             </Wrap>
-
         </SideBarWithHeader>
     )
 }
