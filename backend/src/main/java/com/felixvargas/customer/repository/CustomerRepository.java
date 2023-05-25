@@ -20,6 +20,8 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
     boolean existsCustomerById(Integer id);
 
+
+    
     @Modifying(clearAutomatically = true) // this ensures that the entity manager is cleared before the update is executed
     @Transactional // this ensures that the update is executed in a transactional context
     @Query("UPDATE Customer c SET c.profileImageId = ?1 WHERE c.id = ?2")

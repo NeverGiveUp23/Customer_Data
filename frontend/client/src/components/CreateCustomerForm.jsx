@@ -45,7 +45,7 @@ const MySelect = ({label, ...props}) => {
 };
 
 // And now we can use these
-const CreateCustomerForm = ({ onSuccess, isNewCustomer, setIsNewCustomer }) => {
+const CreateCustomerForm = ({ onSuccess }) => {
 
     return (
         <>
@@ -86,7 +86,6 @@ const CreateCustomerForm = ({ onSuccess, isNewCustomer, setIsNewCustomer }) => {
                             successNotification(
                                 "Customer saved",
                                 `${customer.name} was successfully added`,
-                                setIsNewCustomer(true)
                             )
                             onSuccess(res.headers["authorization"]); // optional refetch
 
