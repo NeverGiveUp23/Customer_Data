@@ -4,32 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="S3 Buckets , Test, Refactor">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/jwt/CustomUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9b6fc0f-0170-4fb5-b743-ac88af59c066/storage_v2/_src_/database/customer.3n8hJA/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Fixed Upload Isssue, Company Coming Soon &amp; new Badge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/repository/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerJDBCDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerJPADataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerJPADataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/service/CustomerUserDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/jwt/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/jwt/JWTUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/security/SecurityFilterChainConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/security/SecurityFilterChainConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/repository/CustomerRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/repository/CustomerRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerJPADataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/customer/service/CustomerJPADataAccessServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/Customer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/Customer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/CreateCustomerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/CreateCustomerForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/DrawerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/DrawerForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/UpdateCustomer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/UpdateCustomer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/context/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/shared/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/shared/SideBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/services/client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/services/client.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,14 +238,7 @@
       <workItem from="1683761141839" duration="19446000" />
       <workItem from="1683832295899" duration="94000" />
       <workItem from="1683832397870" duration="23002000" />
-      <workItem from="1684173391713" duration="86156000" />
-    </task>
-    <task id="LOCAL-00025" summary="Adjusting spinner">
-      <created>1682987093185</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1682987093185</updated>
+      <workItem from="1684173391713" duration="87225000" />
     </task>
     <task id="LOCAL-00026" summary="Adjusting spinner">
       <created>1682987136605</created>
@@ -606,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684855559629</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Fixed Upload Isssue, Company Coming Soon &amp; new Badge">
+      <created>1685052000428</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1685052000428</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +612,8 @@
     <MESSAGE value="Registration form/solution" />
     <MESSAGE value="expose metrics and health and add application-dev.yml" />
     <MESSAGE value="S3 Buckets , Test, Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="S3 Buckets , Test, Refactor" />
+    <MESSAGE value="Fixed Upload Isssue, Company Coming Soon &amp; new Badge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Upload Isssue, Company Coming Soon &amp; new Badge" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

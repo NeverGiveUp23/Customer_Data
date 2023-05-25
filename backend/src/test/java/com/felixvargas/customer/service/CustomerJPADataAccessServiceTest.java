@@ -52,7 +52,7 @@ class CustomerJPADataAccessServiceTest {
         assertThat(expected).isEqualTo(customers);
         ArgumentCaptor<Pageable> pageArgumentCaptor = ArgumentCaptor.forClass(Pageable.class);
         verify(customerRepositoryMock).findAll(pageArgumentCaptor.capture());
-        assertThat(pageArgumentCaptor.getValue()).isEqualTo(Pageable.ofSize(15));
+        assertThat(pageArgumentCaptor.getValue()).isEqualTo(Pageable.ofSize(30));
     }
 
     @Test
