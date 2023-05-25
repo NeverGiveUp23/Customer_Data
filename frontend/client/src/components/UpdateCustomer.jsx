@@ -15,11 +15,15 @@ import {
     Alert,
     AlertIcon,
     Box,
+    VStack,
+    Image
 } from "@chakra-ui/react";
 import * as Yup from 'yup';
 import {Form, Formik, useField} from 'formik';
 import CreateCustomerForm from "./CreateCustomerForm.jsx";
-import {updateCustomer} from "../services/client.jsx";
+import {updateCustomer, uploadCustomerPicture, getCustomerProfilePictureUrl} from "../services/client.jsx";
+import React, {useCallback} from 'react'
+import {useDropzone} from 'react-dropzone'
 import {successNotification, errorNotification} from "../services/Notification.js";
 
 
@@ -61,6 +65,54 @@ const MySelect = ({label, ...props}) => {
 
 const AddIcon = () => "+";
 const CloseIcon = () => "X";
+
+
+
+// Profile Image Upload component
+
+const MyDropzone = ({ id , fetchCustomers }) => {
+    const onDrop = useCallback(acceptedFiles => {
+
+        const formData = new FormData();
+        formData.append("file", acceptedFiles[0]);
+
+        uploadCustomerPicture(
+            id,
+            formData
+        ).then(res => {
+            successNotification("Picture uploaded successfully", "Picture uploaded successfully")
+            fetchCustomers()
+        }).catch(err => {
+            errorNotification("Failed to upload picture", "Failed to upload picture")
+        })
+    }, [])
+
+
+
+
+    const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+
+    return (
+        <Box {...getRootProps()}
+             w={"100%"}
+             textAlign={"center"}
+             border={"dashed"}
+             borderColor={"gray.200"}
+             borderRadius={"3xl"}
+             p={6}
+             rounded={"md"}
+        >
+            <input {...getInputProps()} />
+            {
+                isDragActive ?
+                    <p>Drop the picture here</p> :
+                    <p>Drag 'n' drop some picture here, or click to select picture</p>
+            }
+        </Box>
+    )
+}
+
+
 
 const UpdateCustomer = ({id, name, email, age, gender, fetchCustomers}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -122,7 +174,21 @@ const UpdateCustomer = ({id, name, email, age, gender, fetchCustomers}) => {
                                 }}
                             >
                                 {({isValid, isSubmitting, dirty}) => (
+
                                     <Form>
+                                        <VStack
+                                       spacing={'5'}
+                                       mb={'5'}
+                                        >
+                                            <Image
+                                            borderRadius={'full'}
+                                            boxSize={'150px'}
+                                            objectFit={'cover'}
+                                              src={getCustomerProfilePictureUrl(id)}
+                                            />
+                                            <MyDropzone id={id} fetchCustomers={fetchCustomers}/>
+                                        </VStack>
+
                                         <Stack spacing={"24px"}>
                                             <MyTextInput
                                                 label="Name"

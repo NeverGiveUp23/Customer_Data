@@ -131,7 +131,7 @@ class CustomerRepositoryTest extends AbstractTestContainers {
 
 
         //when
-        underJPATest.updateProfileImageId("test", id);
+        underJPATest.updateCustomerProfileImageId("test", id);
 
         //then
         Optional<Customer> customerOptional = underJPATest.findById(id);

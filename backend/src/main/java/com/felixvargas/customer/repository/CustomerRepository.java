@@ -1,6 +1,7 @@
 package com.felixvargas.customer.repository;
 
 import com.felixvargas.customer.model.Customer;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -20,8 +21,9 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     boolean existsCustomerById(Integer id);
 
     @Modifying(clearAutomatically = true) // this ensures that the entity manager is cleared before the update is executed
+    @Transactional // this ensures that the update is executed in a transactional context
     @Query("UPDATE Customer c SET c.profileImageId = ?1 WHERE c.id = ?2")
-    int updateProfileImageId(String profileImageId, Integer customerId);
+    void updateCustomerProfileImageId(String profileImageId, Integer customerId);
 
 
 }

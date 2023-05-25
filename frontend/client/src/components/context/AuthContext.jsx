@@ -18,7 +18,8 @@ const AuthProvider = ({  children}) => {
             token = jwtDecode(token);
             setCustomer({
                 username: token.sub,
-                roles: token.scopes
+                roles: token.scopes,
+                name: token.name
             })
         }
     }
@@ -33,7 +34,6 @@ const AuthProvider = ({  children}) => {
             performLogin(usernameAndPassword).then(res => {
                 const jwtToken = res.headers["authorization"];
                 localStorage.setItem("access_token", jwtToken);
-
                 const decodedToken = jwtDecode(jwtToken);
                setCustomerFromToken();
                 resolve(res);
@@ -44,7 +44,6 @@ const AuthProvider = ({  children}) => {
     }
 
     const logOut = () => {
-
         localStorage.removeItem("access_token");
         setCustomer(null);
     }
@@ -63,7 +62,7 @@ const AuthProvider = ({  children}) => {
     }
 
     return (
-        <AuthContext.Provider value={{ customer, login, logOut, isCustomerAuthenticated, setCustomerFromToken }}>
+        <AuthContext.Provider value={{ customer, login, logOut, isCustomerAuthenticated, setCustomerFromToken}}>
             {children}
         </AuthContext.Provider>
     )

@@ -24,7 +24,7 @@ public class CustomerJPADataAccessService implements CustomerDAO {
     // getting findAll() -> customerRepository
     @Override
     public List<Customer> selectAllCustomer() {
-        Page<Customer> page = customerRepository.findAll(Pageable.ofSize(15));
+        Page<Customer> page = customerRepository.findAll(Pageable.ofSize(30));
 
         return page.getContent();
     }
@@ -52,7 +52,7 @@ public class CustomerJPADataAccessService implements CustomerDAO {
 
     @Override
     public void updateCustomerProfileImageId(String profileImageId, Integer customerId) {
-        customerRepository.updateProfileImageId(profileImageId, customerId);
+        customerRepository.updateCustomerProfileImageId(profileImageId, customerId);
     }
 
     @Override

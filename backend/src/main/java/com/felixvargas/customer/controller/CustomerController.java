@@ -73,13 +73,13 @@ public class CustomerController {
 
 //     upload s3 image
     @PostMapping(
-            value = "{customerId}/profile-image",
+            value = "{id}/profile-image",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE
     )
-    public void uploadCustomerProfilePic(@PathVariable("customerId") Integer customerId,
+    public void uploadCustomerProfilePic(@PathVariable("id") Integer id,
                                          @RequestParam("file")MultipartFile multipartFile){
 
-        customerService.uploadCustomerImage(customerId, multipartFile);
+        customerService.uploadCustomerImage(id, multipartFile);
 
     }
 
