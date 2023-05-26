@@ -9,7 +9,6 @@ import { errorNotification} from "./services/Notification.js";
 const Customer = ()  => {
     const [ customers, setCustomers] = useState([]);
     const [ isLoading, setIsLoading] = useState(false);
-    const [isNewCustomer, setIsNewCustomer] = useState(false);
     const [err, setErr] = useState("");
 
     const fetchCustomers =  () => {
@@ -59,8 +58,6 @@ const Customer = ()  => {
                 <Center h={"500px"}>
 
                     <DrawerForm
-                        isNewCustomer={isNewCustomer}
-                        setIsNewCustomer={setIsNewCustomer}
                         fetchCustomers={fetchCustomers}
                     />
                     <Text fontSize={"4xl"} ml={'30px'}>
@@ -82,8 +79,6 @@ const Customer = ()  => {
                 {customers.map((customer, index) => (
                     <WrapItem key={index}>
                         <CardWithImage
-                            isNewCustomer={isNewCustomer}
-                            setIsNewCustomer={setIsNewCustomer}
                             fetchCustomers={fetchCustomers}
                             {...customer} // this will pass all the props of customer to CardWithImage
                             imageNumber={index}
