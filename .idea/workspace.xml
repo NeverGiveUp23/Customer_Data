@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Fixed Upload Isssue, Company Coming Soon &amp; new Badge">
+    <list default="true" id="45ad2134-a5d5-4daf-867e-7dfdd2b2fd6c" name="Changes" comment="Fixed re-route bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/felixvargas/customer/repository/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/client/src/components/signup/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/client/src/components/signup/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/journey/CustomerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/felixvargas/journey/CustomerIT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
       <recent name="com.felixvargas.s3" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="JUnit.CustomerIT.canUploadProfilePicture">
     <configuration name="CustomerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer-api" />
       <extension name="coverage">
@@ -218,9 +216,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CustomerIT.canUploadProfilePicture" />
         <item itemvalue="Node.js.UpdateCustomer.jsx" />
         <item itemvalue="JUnit.CustomerIT" />
-        <item itemvalue="JUnit.CustomerIT.canUploadProfilePicture" />
         <item itemvalue="JUnit.CustomerIT.canRegisterACustomer" />
         <item itemvalue="JUnit.CustomerIT.canDeleteCustomer" />
       </list>
@@ -240,21 +238,7 @@
       <workItem from="1683761141839" duration="19446000" />
       <workItem from="1683832295899" duration="94000" />
       <workItem from="1683832397870" duration="23002000" />
-      <workItem from="1684173391713" duration="88390000" />
-    </task>
-    <task id="LOCAL-00027" summary="Adjusting spinner">
-      <created>1682994339234</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1682994339234</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Adjusting spinner">
-      <created>1683049016117</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1683049016117</updated>
+      <workItem from="1684173391713" duration="89446000" />
     </task>
     <task id="LOCAL-00029" summary="Adjusting spinner">
       <created>1683049045689</created>
@@ -585,7 +569,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685057703362</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Fixed re-route bug">
+      <created>1685059182220</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1685059182221</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Fixed re-route bug">
+      <created>1685059306376</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1685059306376</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,7 +613,8 @@
     <MESSAGE value="expose metrics and health and add application-dev.yml" />
     <MESSAGE value="S3 Buckets , Test, Refactor" />
     <MESSAGE value="Fixed Upload Isssue, Company Coming Soon &amp; new Badge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Upload Isssue, Company Coming Soon &amp; new Badge" />
+    <MESSAGE value="Fixed re-route bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed re-route bug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

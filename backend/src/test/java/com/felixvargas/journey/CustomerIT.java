@@ -378,7 +378,7 @@ public class CustomerIT {
         // Verify the profile image id
         String profileImageId = webTestClient.get()
                 .uri(CUSTOMER_PATH + "/{id}", customerDTO.id())
-                .accept(MediaType.APPLICATION_JSON)
+                .accept(MediaType.IMAGE_JPEG)
                 .header(AUTHORIZATION, String.format("Bearer " + jwtToken))
                 .exchange()
                 .expectStatus()
