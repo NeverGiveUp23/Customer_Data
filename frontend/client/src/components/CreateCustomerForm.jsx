@@ -124,6 +124,8 @@ const CreateCustomerForm = ({ onSuccess }) => {
                                 placeholder="20"
                             />
 
+
+
                             <MyTextInput
                                 label="Password"
                                 name="password"
