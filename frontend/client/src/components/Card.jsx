@@ -8,7 +8,6 @@ import {
     Text,
     Stack,
     Tag,
-    Badge,
     useColorModeValue,
     Button
 } from '@chakra-ui/react';
@@ -16,22 +15,9 @@ import {useState, useEffect} from "react";
 import DeleteCustomer from "./DeleteCustomer.jsx";
 import UpdateCustomer from "./UpdateCustomer.jsx";
 import {getCustomerProfilePictureUrl} from "../services/client.jsx";
-export default function CardWithImage({id, name, email, age, gender, imageNumber, fetchCustomers, setIsNewCustomer, isNewCustomer}) {
+export default function CardWithImage({id, name, email, age, gender, imageNumber, fetchCustomers}) {
     const randomUserGender = gender  === "MALE" ? "men" : "women";
     const [showBadge, setShowBadge] = useState(true);
-
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            if (isNewCustomer) {
-                setShowBadge(true);
-            }
-        }, 1000);
-        return () => clearTimeout(timeout);
-    }, [])
-
-
-
 
 
 
@@ -70,7 +56,6 @@ export default function CardWithImage({id, name, email, age, gender, imageNumber
                         {/*<Tag borderRadius={"full"}>{id}</Tag>*/}
                         <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
                             {name}
-                            { showBadge && <Badge ml={2} colorScheme="green">New</Badge>}
                         </Heading>
                         <Text color={'gray.500'}>{email}</Text>
                         <Text color={'gray.500'}>Age {age} | {gender}</Text>
